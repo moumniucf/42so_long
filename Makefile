@@ -2,7 +2,7 @@ NAME = so_long
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 MFLAG = -lmlx -framework OpenGL -framework AppKit
 
@@ -27,4 +27,4 @@ clean :
 fclean : clean
 	@rm -f $(NAME)
 
-re : clean all
+re : fclean all
