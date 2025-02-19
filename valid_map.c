@@ -1,32 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   valid_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/19 17:11:01 by youmoumn         ###   ########.fr       */
+/*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
+/*   Updated: 2025/02/19 17:11:39 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "so_long.h"
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <mlx.h>
-
-typedef struct s_game
-{
-	int x;
-	int y;
-}	t_game
-
-# define R 0x00FF0000
-# define G 0x0000FF00
-# define B 0x000000FF
-
-#endif
+// flodfil
