@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/20 19:02:32 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:34:27 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ char **reading_map(char *file)
 		return (NULL);
 
 	char **map = malloc(100 * sizeof(char *));
-	if (!map)
-		return (NULL);
-
 	int i = 0;
-	char *line;
-	while ((line = get_next_line(fd))) 
-		map[i++] = line;
+	char *line = get_next_line(fd);
+	while (line)
+	{
+		map[i] = line;
+		line = get_next_line(fd);
+		i++;
+	}
 
 	map[i] = NULL;
 	close(fd);
