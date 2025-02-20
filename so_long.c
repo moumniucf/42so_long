@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/20 10:47:52 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:30:30 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,34 @@ int main(int ac, char **av)
 	(void)av;
 	void	*win;
 	void	*mlx;
+	void	*image;
+	void	*image2;
+	void	*image3;
+	// char **map = NULL;
+	int img_width = 1200;
+	int img_height = 600;
 	mlx = mlx_init();
-	win = mlx_new_window(mlx, 1200, 600, "so_long");
+	win = mlx_new_window(mlx, 1200, 1200, "so_long");
+	image = mlx_xpm_file_to_image(mlx, "walls.xpm", &img_width, &img_height);
+	image2 = mlx_xpm_file_to_image(mlx, "exit.xpm", &img_width, &img_height);
+	image3 = mlx_xpm_file_to_image(mlx, "walls.xpm", &img_width, &img_height);
+	if(!image)
+		return (0);
+	mlx_put_image_to_window(mlx, win, image, 600, 600);
+	mlx_put_image_to_window(mlx, win, image2, 500, 500);
+	// map = reading_map("map1.ber");
 	// int i = 0;
-	// while(i <= 1200)
+	// int j;
+	// while(map[i])
 	// {
-	// 	mlx_pixel_put(mlx, win, 1200 + i, 600, R);
-	// 	i++;
+	// 	j = 0;
+	// 	while(map[i][j])
+	// 	{
+	// 		if(map[i][j] == 'C')
+	// 		{
+	// 			mlx_xpm_file_to_image(mlx, "walls.xpm", &img_width, &img_height);
+	// 		}
+	// 	}
 	// }
-	mlx_put_image_to_window(mlx, win, "map1.ber", 1200, 600);
 	mlx_loop(mlx);
 }

@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 MFLAG = -lmlx -framework OpenGL -framework AppKit
 
-SRCS = so_long.c
+SRCS = so_long.c valid_map.c getnextline/get_next_line.c getnextline/get_next_line_utils.c
 
 HEADER = so_long.h
 
