@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/20 16:55:23 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:02:32 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,71 @@
 
 char **reading_map(char *file)
 {
-	char *line;
 	int fd = open(file, O_RDONLY);
-	char **map = malloc((100) * sizeof(char *));
-	line = get_next_line(fd);
+	if (fd < 0)
+		return (NULL);
+
+	char **map = malloc(100 * sizeof(char *));
+	if (!map)
+		return (NULL);
+
 	int i = 0;
-	while(line)
-	{
-		map[i] = line;
-		line = get_next_line(fd);
-		i++;
-	}
+	char *line;
+	while ((line = get_next_line(fd))) 
+		map[i++] = line;
+
 	map[i] = NULL;
-	return(map);
+	close(fd);
+	return (map);
 }
-void	apply_map(void	*mlx, char *files, int x, int y, char **map)
+
+void apply_map(void *mlx, void *win, int x, int y, char **map)
 {
+	void *img;
+	void *img1;
+	void *img2;
+	void *img3;
+	void *img4;
+	int img_w, img_h;
+	img = mlx_xpm_file_to_image(mlx, "wall.xpm", &img_w, &img_h);
+	img1 = mlx_xpm_file_to_image(mlx, "exit.xpm", &img_w, &img_h);
+	img2 = mlx_xpm_file_to_image(mlx, "crc_r.xpm", &img_w, &img_h);
+	img3 = mlx_xpm_file_to_image(mlx, "map.xpm", &img_w, &img_h);
+	img4 = mlx_xpm_file_to_image(mlx, "coin.xpm", &img_w, &img_h);
+	if (!img || !img1 || !img2 || !img3 || !img4)
+	{
+		printf("ko\n");
+		exit(1);
+	}
 	int i = 0;
-	while(map[i])
+	while (map[i])
 	{
 		int j = 0;
-		while(map[i][j])
+		while (map[i][j])
 		{
-			if(map[i][j] == 'C')
+			if(map[i][j] == '1')
 			{
-				mlx_xpm_file_to_image(mlx, files, &x, &y);
+				mlx_put_image_to_window(mlx, win,img ,j * x, i * y);
+			}
+			else if(map[i][j] == 'E')
+			{
+				mlx_put_image_to_window(mlx, win,img1 ,j * x, i * y);
+			}
+			else if(map[i][j] == 'P')
+			{
+				mlx_put_image_to_window(mlx, win,img2 ,j * x, i * y);
+			}
+			else if(map[i][j] == '0')
+			{
+				mlx_put_image_to_window(mlx, win,img3 ,j * x, i * y);
+			}
+			else if(map[i][j] == 'C')
+			{
+				mlx_put_image_to_window(mlx, win,img4 ,j * x, i * y);
 			}
 			j++;
 		}
 		i++;
 	}
 }
-int main()
-{
-	char **map = reading_map("map1.ber");
-	void *mlx = mlx_init();
-	void *win = mlx_new_window(mlx, 12, 12, "test");
-	apply_map(mlx, "walls.xpm", 12, 12, map);
-}
+

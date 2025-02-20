@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/20 16:54:28 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/20 18:43:43 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_game
 # define B 0x000000FF
 
 
-char **reading_map();
+char **reading_map(char *file);
+void apply_map(void *mlx, void *win, int x, int y, char **map);
 
 #endif
