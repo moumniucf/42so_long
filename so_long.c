@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/18 19:01:18 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/20 10:47:52 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,16 @@ int main(int ac, char **av)
 {
 	(void)ac;
 	(void)av;
-	void	*img ;
+	void	*win;
 	void	*mlx;
-	void	*image;
-
 	mlx = mlx_init();
-	img = mlx_new_window(mlx, 1200, 1000, "so_long");
-	image = mlx_new_image(mlx, 1200, 100);
-	mlx_put_image_to_window(mlx, img, image, 32, 32);
-	int i = 0;
-	while(i <= 1200)
-	{
-		mlx_pixel_put(mlx, img, 100, 100, R);
-		i++;
-	}
+	win = mlx_new_window(mlx, 1200, 600, "so_long");
+	// int i = 0;
+	// while(i <= 1200)
+	// {
+	// 	mlx_pixel_put(mlx, win, 1200 + i, 600, R);
+	// 	i++;
+	// }
+	mlx_put_image_to_window(mlx, win, "map1.ber", 1200, 600);
 	mlx_loop(mlx);
 }
