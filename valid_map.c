@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/20 19:34:27 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/22 17:41:41 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char **reading_map(char *file)
 	}
 
 	map[i] = NULL;
-	close(fd);
 	return (map);
 }
 
@@ -40,12 +39,13 @@ void apply_map(void *mlx, void *win, int x, int y, char **map)
 	void *img2;
 	void *img3;
 	void *img4;
-	int img_w, img_h;
-	img = mlx_xpm_file_to_image(mlx, "wall.xpm", &img_w, &img_h);
+	int img_w;
+	int img_h;
+	img = mlx_xpm_file_to_image(mlx, "hayt.xpm", &img_w, &img_h);
 	img1 = mlx_xpm_file_to_image(mlx, "exit.xpm", &img_w, &img_h);
-	img2 = mlx_xpm_file_to_image(mlx, "crc_r.xpm", &img_w, &img_h);
-	img3 = mlx_xpm_file_to_image(mlx, "map.xpm", &img_w, &img_h);
-	img4 = mlx_xpm_file_to_image(mlx, "coin.xpm", &img_w, &img_h);
+	img2 = mlx_xpm_file_to_image(mlx, "arbi.xpm", &img_w, &img_h);
+	img3 = mlx_xpm_file_to_image(mlx, "wall.xpm", &img_w, &img_h);
+	img4 = mlx_xpm_file_to_image(mlx, "coins.xpm", &img_w, &img_h);
 	if (!img || !img1 || !img2 || !img3 || !img4)
 	{
 		printf("ko\n");

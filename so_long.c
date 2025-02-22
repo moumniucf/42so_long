@@ -6,12 +6,35 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/20 18:49:35 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/22 17:44:31 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+int len_x(char *map)
+{
+	int x = 0;
+	while(map[x])
+	{
+		x++;
+	}
+	return(x);
+}
+int len_y(char *map)
+{
+	int y = 0;
+	int y1 = 0;
+	while(map[y])
+	{
+		if(map[y1] == '\n')
+		{
+			y1++;
+		}
+		y++;
+	}
+	return (y1);
+}
 int main(int ac, char **av)
 {
 	(void)ac;
@@ -22,8 +45,6 @@ int main(int ac, char **av)
 	// void	*image2;
 	// void	*image3;
 	// // char **map = NULL;
-	// int img_width = 1200;
-	// int img_height = 600;
 	// mlx = mlx_init();
 	// win = mlx_new_window(mlx, 1200, 1200, "so_long");
 	// image = mlx_xpm_file_to_image(mlx, "walls.xpm", &img_width, &img_height);
@@ -49,7 +70,7 @@ int main(int ac, char **av)
 	// // }
 	char **map = reading_map("map1.ber");
 	void *mlx = mlx_init();
-	void *win = mlx_new_window(mlx, 600, 600, "test");
+	void *win = mlx_new_window(mlx, 600, 600, "so_long");
 	apply_map(mlx, win,32, 32, map);
 	mlx_loop(mlx);
 }
