@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   press_key.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/23 17:51:16 by youmoumn         ###   ########.fr       */
+/*   Created: 2025/02/23 11:29:00 by youmoumn          #+#    #+#             */
+/*   Updated: 2025/02/23 15:47:23 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int main(int ac, char **av)
+int prees_esc(int keycode, t_game *game)
 {
-	(void)ac;
-	(void)av;
-	t_game game;
-	game.map = reading_map("map3.ber");
-	game.x = len_x(*game.map);
-	game.y = len_y(game.map);
-	game.mlx = mlx_init();
-	game.win = mlx_new_window(game.mlx, game.x * 32, game.y * 32, "so_long");
-	apply_map(game.mlx, game.win, 32, 32, game.map, &game);
-	mlx_key_hook(game.win, prees_esc, &game);
-	mlx_hook(game.win, KEY_EXIT, 0, press_x, &game);
-	mlx_loop(game.mlx);
+	if(keycode == KEY_ESC)
+	{
+		mlx_destroy_window(game->mlx, game->win);
+		exit(0);
+	}
+	return (0);
+}
+
+int	press_x(t_game *game)
+{
+	mlx_destroy_window(game->mlx, game->win);
+	exit(0);
+	return (0);
 }
