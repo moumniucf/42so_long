@@ -7,7 +7,8 @@ CFLAGS = -Wall -Wextra -Werror
 MFLAG = -lmlx -framework OpenGL -framework AppKit
 
 SRCS = so_long.c valid_map.c getnextline/get_next_line.c getnextline/get_next_line_utils.c move.c\
-press_key.c
+press_key.c 42_printf/ft_printf.c 42_printf/ft_putchar.c 42_printf/ft_puthex.c 42_printf/ft_putnbr.c\
+42_printf/ft_putpoint.c 42_printf/ft_putprc.c 42_printf/ft_putstr.c 42_printf/ft_putunsigned.c
 
 HEADER = so_long.h
 

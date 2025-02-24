@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/24 13:06:42 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:21:29 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,17 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <mlx.h>
+#include "42_printf/ft_printf.h"
 #include "getnextline/get_next_line.h"
 
 typedef struct s_game
 {
+	int height;
+	int width;
 	int x;
 	int y;
 	void *win;
 	void *mlx;
-	int P_X;
-	int P_Y;
 	char **map;
 	int clct;
 }	t_game;
@@ -54,4 +55,8 @@ int len_y(char **map);
 int len_x(char *map);
 int prees_esc(int keycode, t_game *game);
 int	press_x(t_game *game);
+int move_rig(int keycode, t_game *game);
+int move_lef(int keycode, t_game *game);
+int move_player(int keycode, t_game *game);
+int move_up(int keycode, t_game *game);
 #endif
