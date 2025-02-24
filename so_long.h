@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/23 17:31:45 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:06:42 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_game
 	int P_X;
 	int P_Y;
 	char **map;
+	int clct;
 }	t_game;
 
 # define R 0x00FF0000

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/23 16:19:05 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/24 12:47:26 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void apply_map(void	*mlx, void *win, int x, int y, char **map, t_game *game)
 	(void)map;
 	img = mlx_xpm_file_to_image(game->mlx, "hayt.xpm", &img_w, &img_h);
 	img1 = mlx_xpm_file_to_image(game->mlx, "bab2.xpm", &img_w, &img_h);
-	img2 = mlx_xpm_file_to_image(game->mlx, "real.xpm", &img_w, &img_h);
+	img2 = mlx_xpm_file_to_image(game->mlx, "arbi.xpm", &img_w, &img_h);
 	img3 = mlx_xpm_file_to_image(game->mlx, "grass.xpm", &img_w, &img_h);
 	img4 = mlx_xpm_file_to_image(game->mlx, "ucl.xpm", &img_w, &img_h);
 	if (!img || !img1 || !img2 || !img3 || !img4)

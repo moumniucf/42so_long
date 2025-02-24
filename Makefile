@@ -2,7 +2,7 @@ NAME = so_long
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
 MFLAG = -lmlx -framework OpenGL -framework AppKit
 
