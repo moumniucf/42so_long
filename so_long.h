@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/24 17:24:29 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/25 10:53:58 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_game
 	void *win;
 	void *mlx;
 	char **map;
+	int mvmt;
 	int clct;
 }	t_game;
 
@@ -59,4 +60,6 @@ int move_rig(int keycode, t_game *game);
 int move_lef(int keycode, t_game *game);
 int move_player(int keycode, t_game *game);
 int move_up(int keycode, t_game *game);
+int move_dow(int keycode, t_game *game);
+int count_c(char **map, int x, int y);
 #endif
