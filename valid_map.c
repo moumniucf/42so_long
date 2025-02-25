@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/25 10:50:46 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/25 16:41:01 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int len_x(char *map)
 {
+	if(!map)
+		exit(0);
 	int x = 0;
 	while(map[x] && map[x] != '\n')
 	{
@@ -24,6 +26,8 @@ int len_x(char *map)
 
 int len_y(char **map)
 {
+	if(!map)
+		exit(0);
 	int y = 0;
 	while(map[y])
 	{

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 11:29:00 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/25 10:30:40 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/25 11:38:15 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,48 @@ int count_c(char **map, int x, int y)
 		while(j < y)
 		{
 			if(map[i][j] == 'C')
+			{
+				c++;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (c);
+}
+int count_p(char **map, int x, int y)
+{
+	int i;
+	int j;
+	int c = 0;
+	i = 0;
+	while(i < x)
+	{
+		j = 0;
+		while(j < y)
+		{
+			if(map[i][j] == 'P')
+			{
+				c++;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (c);
+}
+int count_e(char **map, int x, int y)
+{
+	int i;
+	int j;
+	int c = 0;
+	i = 0;
+	while(i < x)
+	{
+		j = 0;
+		while(j < y)
+		{
+			if(map[i][j] == 'E')
 			{
 				c++;
 			}
