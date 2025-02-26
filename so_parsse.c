@@ -6,16 +6,61 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:15:44 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/25 16:40:17 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/26 18:04:47 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-// int	ispec(char **map, int x, int y)
-// {
-	
-// }
+int	invalid_map(t_game *game)
+{
+	game->height = len_x(game->map[0]);
+	game->width = len_y(game->map);
+	int i = 0;
+	int j = 0;
+	while(i < game->width)
+	{
+		if((game->map[i][j] != '1' || game->map[i][game->height - 1] != '1'))
+			return(0);
+		i++;
+	}
+	i = 0;
+	while(j < game->height)
+	{
+		if(game->map[i][j] != '1' || game->map[game->width - 1][j] != '1')
+			return (0);
+		j++;
+	}
+	return(1);
+}
+int valid_extention(char *file)
+{
+	int		len;
+	int		dot;
+	int		i;
+	char	*ber;
+
+	len = ft_strlen(file);
+	dot = 0;
+	i = 0;
+	ber = ".ber";
+	while (i < len)
+	{
+		if (i < 4 && (file[len - 1 - i] != ber[3 - i]))
+		{
+			return (0);
+		}
+		if (file[i] == '.')
+			dot++;
+		i++;
+	}
+	if (dot > 1)
+	{
+		return (0);
+	}
+	return (1);
+}
+
 void	so_parss(int ac, char **av, char **map, t_game *game)
 {
 	(void)ac;
@@ -46,14 +91,13 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 				ft_printf("Error\n");
 				exit(1);
 			}
+			else if(!invalid_map(game))
+			{
+				ft_printf("Error\n");
+				exit(1);
+			}
 			j++;
 		}
 		i++;
 	}
-	// int x = 0;
-	// int y = 0;
-	// while(y < game->width)
-	// {
-		
-	// }
 }

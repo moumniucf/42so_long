@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/25 15:15:03 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:11:47 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include <fcntl.h>
 #include <mlx.h>
 #include "printf/ft_printf.h"
@@ -65,4 +64,6 @@ int count_c(char **map, int x, int y);
 void	so_parss(int ac, char **av, char **map, t_game *game);
 int count_p(char **map, int x, int y);
 int count_e(char **map, int x, int y);
+int	invalid_map(t_game *game);
+int valid_extention(char *file);
 #endif

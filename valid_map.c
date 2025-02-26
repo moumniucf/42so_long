@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/25 16:41:01 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/26 17:42:02 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int len_x(char *map)
 int len_y(char **map)
 {
 	if(!map)
-		exit(0);
+		return (0);
 	int y = 0;
 	while(map[y])
 	{
@@ -35,20 +35,28 @@ int len_y(char **map)
 	}
 	return (y);
 }
-
 char **reading_map(char *file)
 {
 	int fd = open(file, O_RDONLY);
-	char **map = malloc(1000 * sizeof(char *));
-	int i = 0;
+	int height = 0;
 	char *line = get_next_line(fd);
+	while (line)
+	{
+		height++;
+		free(line);
+		line = get_next_line(fd);
+	}
+	close(fd);
+	fd = open(file, O_RDONLY);
+	char **map = malloc((height + 1) * sizeof(char *));
+	int i = 0;
+	line = get_next_line(fd);
 	while (line)
 	{
 		map[i] = line;
 		line = get_next_line(fd);
 		i++;
 	}
-
 	map[i] = NULL;
 	return (map);
 }
@@ -66,13 +74,12 @@ void apply_map(void	*mlx, void *win, int x, int y, char **map, t_game *game)
 	(void)win;
 	(void)map;
 	img = mlx_xpm_file_to_image(game->mlx, "hayt.xpm", &img_w, &img_h);
-	img1 = mlx_xpm_file_to_image(game->mlx, "bab2.xpm", &img_w, &img_h);
-	img2 = mlx_xpm_file_to_image(game->mlx, "arbi.xpm", &img_w, &img_h);
-	img3 = mlx_xpm_file_to_image(game->mlx, "grass.xpm", &img_w, &img_h);
-	img4 = mlx_xpm_file_to_image(game->mlx, "ucl.xpm", &img_w, &img_h);
+	img1 = mlx_xpm_file_to_image(game->mlx, "e.xpm", &img_w, &img_h);
+	img2 = mlx_xpm_file_to_image(game->mlx, "cr.xpm", &img_w, &img_h);
+	img3 = mlx_xpm_file_to_image(game->mlx, "b.xpm", &img_w, &img_h);
+	img4 = mlx_xpm_file_to_image(game->mlx, "ballon.xpm", &img_w, &img_h);
 	if (!img || !img1 || !img2 || !img3 || !img4)
 	{
-		printf("ko\n");
 		exit(1);
 	}
 	int i = 0;

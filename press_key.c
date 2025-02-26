@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 11:29:00 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/25 11:38:15 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/26 17:47:07 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,16 @@ int	press_x(t_game *game)
 
 int count_c(char **map, int x, int y)
 {
+	if(!map)
+		return (0);
 	int i;
 	int j;
 	int c = 0;
 	i = 0;
-	while(i < x)
+	while(i < x && map[i])
 	{
 		j = 0;
-		while(j < y)
+		while(j < y && map[i][j])
 		{
 			if(map[i][j] == 'C')
 			{
@@ -56,10 +58,10 @@ int count_p(char **map, int x, int y)
 	int j;
 	int c = 0;
 	i = 0;
-	while(i < x)
+	while(i < x && map[i])
 	{
 		j = 0;
-		while(j < y)
+		while(j < y && map[i][j])
 		{
 			if(map[i][j] == 'P')
 			{
@@ -77,10 +79,10 @@ int count_e(char **map, int x, int y)
 	int j;
 	int c = 0;
 	i = 0;
-	while(i < x)
+	while(i < x && map[i])
 	{
 		j = 0;
-		while(j < y)
+		while(j < y && map[i][j])
 		{
 			if(map[i][j] == 'E')
 			{

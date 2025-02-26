@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 11:16:27 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/25 16:15:04 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/02/26 17:13:16 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int move_rig(int keycode, t_game *game)
 				{
 					if(game->map[i][j + 1] == 'E' && game->clct == 0)
 					{
-						printf("3aaaaa\n");
+						ft_printf ("\e[1;34m SUiiiiiiiiii\e[0m\n");
 						exit(0);
 					}
 					if (game->map[i][j + 1] != '1' && game->map[i][j + 1] != 'E')
@@ -71,7 +71,7 @@ int move_lef(int keycode, t_game *game)
 				{
 					if(game->map[i][j - 1] == 'E' && game->clct == 0)
 					{
-						printf("3aaaaa\n");
+						ft_printf ("\e[1;34m SUiiiiiiiiii\e[0m\n");
 						exit(0);
 					}
 					if(game->map[i][j - 1] != '1' && game->map[i][j - 1] != 'E')
@@ -112,7 +112,7 @@ int move_up(int keycode, t_game *game)
 				{
 					if(game->map[i - 1][j] == 'E' && game->clct == 0)
 					{
-						printf("3aaaaa\n");
+						ft_printf ("\e[1;34m SUiiiiiiiiii\e[0m\n");
 						exit(0);
 					}
 					if(game->map[i - 1][j] != '1' && game->map[i - 1][j] != 'E')
@@ -153,7 +153,7 @@ int move_dow(int keycode, t_game *game)
 				{
 					if(game->map[i + 1][j] == 'E' && game->clct == 0)
 					{
-						printf("3aaaaa\n");
+						ft_printf ("\e[1;34mSUiiiiiiiiii\e[0m\n");
 						exit(0);
 					}
 					if(game->map[i + 1][j] != '1' && game->map[i + 1][j] != 'E')
