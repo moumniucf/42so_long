@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:15:44 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/27 17:13:06 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/01 15:39:06 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 	int i;
 	int j;
 	int size = ft_strlen(*map) - 1;
-	game->height = len_x(game->map[0]);
+	game->height = len_x(*game->map);
 	game->width = len_y(game->map);
 	i = 0;
 	while(i < game->width)
@@ -76,7 +76,7 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 		j = 0;
 		while(j < game->height)
 		{
-			if(map[0][j] != '1' || count_c(map, game->width, game->height) == 0)
+			if(count_c(map, game->width, game->height) == 0)
 			{
 				ft_printf("Error\n");
 				exit(1);
@@ -96,11 +96,15 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 				ft_printf("Error\n");
 				exit(1);
 			}
-			else if(!valid_path(game))
+			else if(!valid_chars2(game->map[i][j]))
 			{
-				ft_printf("Error path\n");
+				ft_printf("Error\n");
 				exit(1);
 			}
+			// else if(!is_valid_path(game, map, game->width, game->height))
+			// {
+			// 	ft_printf("OK\n");
+			// }
 			j++;
 		}
 		i++;

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/26 17:42:02 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/01 15:44:00 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ void apply_map(void	*mlx, void *win, int x, int y, char **map, t_game *game)
 	(void)map;
 	img = mlx_xpm_file_to_image(game->mlx, "hayt.xpm", &img_w, &img_h);
 	img1 = mlx_xpm_file_to_image(game->mlx, "e.xpm", &img_w, &img_h);
-	img2 = mlx_xpm_file_to_image(game->mlx, "cr.xpm", &img_w, &img_h);
+	img2 = mlx_xpm_file_to_image(game->mlx, "sb.xpm", &img_w, &img_h);
 	img3 = mlx_xpm_file_to_image(game->mlx, "b.xpm", &img_w, &img_h);
-	img4 = mlx_xpm_file_to_image(game->mlx, "ballon.xpm", &img_w, &img_h);
+	img4 = mlx_xpm_file_to_image(game->mlx, "coin.xpm", &img_w, &img_h);
 	if (!img || !img1 || !img2 || !img3 || !img4)
 	{
 		exit(1);
