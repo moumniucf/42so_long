@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:15:44 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/01 15:39:06 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/01 18:31:19 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +101,10 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 				ft_printf("Error\n");
 				exit(1);
 			}
-			// else if(!is_valid_path(game, map, game->width, game->height))
-			// {
-			// 	ft_printf("OK\n");
-			// }
+			else if(!valid_path(game, map))
+			{
+				ft_printf("OK\n");
+			}
 			j++;
 		}
 		i++;

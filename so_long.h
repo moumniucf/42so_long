@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/01 16:21:15 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/01 18:31:06 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_game
 	char **map;
 	int mvmt;
 	int clct;
-	int *exit;
+	int *ex_it;
 }	t_game;
 
 # define KEY_ESC 53 
@@ -66,7 +66,7 @@ int		count_p(char **map, int x, int y);
 int 	count_e(char **map, int x, int y);
 int		invalid_map(t_game *game);
 int 	valid_extention(char *file);
-void 	flood_fill(t_game *game, int x, int y, int *exit);
+void 	flood_fill(t_game *game, int x, int y, int *ex_it);
 int 	valid_chars2(char c);
-// int is_valid_path(t_game *game, char **map, int width, int height);
+int valid_path(t_game *game, char **map);
 #endif
