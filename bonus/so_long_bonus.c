@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/02 12:01:14 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/02 17:06:22 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,11 @@ int main(int ac, char **av)
 	game.x = len_x(*game.map);
 	game.y = len_y(game.map);
 	game.mlx = mlx_init();
-	game.win = mlx_new_window(game.mlx, game.x * 32, game.y * 32, "./so_long");
+	game.win = mlx_new_window(game.mlx, game.x * 32, game.y * 32, "./so_long_bonus");
 	game.mvmt = 0;
 	game.clct = 0;
 	apply_map(game.mlx, game.win, 32, 32, game.map, &game);
+	// mlx_string_put(game.mlx, game.win, game.x, game.y, 0xFFFFFF, "LOLOLO");
 	mlx_key_hook(game.win, move_player, &game);
 	mlx_hook(game.win, KEY_EXIT, 0, press_x, &game);
 	mlx_loop(game.mlx);

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:59:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/02 16:12:25 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/02 17:03:54 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int move_rig(int keycode, t_game *game)
 	{
 		int i = 0;
 		int j;
+		char mvmn;
 		game->height = len_x(game->map[0]);
 		game->width = len_y(game->map);
 		while(i < game->width)
@@ -30,7 +31,7 @@ int move_rig(int keycode, t_game *game)
 				{
 					if(game->map[i][j + 1] == 'E' && game->clct == 0)
 					{
-						ft_printf ("\e[1;34m SUiiiiiiiiii\e[0m\n");
+						ft_printf ("\e[1;34m Game Over\e[0m\n");
 						exit(0);
 					}
 					if(game->map[i][j + 1] == 'H')
@@ -44,6 +45,7 @@ int move_rig(int keycode, t_game *game)
 						game->map[i][j] = '0';
 						game->clct--;
 						game->mvmt++;
+						mvmn = game->mvmt;
 						ft_printf("Moves : %d\n", game->mvmt);
 						break;
 					}
@@ -76,7 +78,7 @@ int move_lef(int keycode, t_game *game)
 				{
 					if(game->map[i][j - 1] == 'E' && game->clct == 0)
 					{
-						ft_printf ("\e[1;34m SUiiiiiiiiii\e[0m\n");
+						ft_printf ("\e[1;34m Game Over\e[0m\n");
 						exit(0);
 					}
 					if(game->map[i][j - 1] == 'H')
@@ -122,7 +124,7 @@ int move_up(int keycode, t_game *game)
 				{
 					if(game->map[i - 1][j] == 'E' && game->clct == 0)
 					{
-						ft_printf ("\e[1;34m SUiiiiiiiiii\e[0m\n");
+						ft_printf ("\e[1;34m Game Over\e[0m\n");
 						exit(0);
 					}
 					if(game->map[i - 1][j] == 'H')
@@ -168,7 +170,7 @@ int move_dow(int keycode, t_game *game)
 				{
 					if(game->map[i + 1][j] == 'E' && game->clct == 0)
 					{
-						ft_printf ("\e[1;34mSUiiiiiiiiii\e[0m\n");
+						ft_printf ("\e[1;34mGame Over\e[0m\n");
 						exit(0);
 					}
 					if(game->map[i + 1][j] == 'H')
