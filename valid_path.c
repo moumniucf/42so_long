@@ -6,13 +6,13 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 15:06:32 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/01 18:32:32 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/02 15:55:41 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	flood_fill(t_game *game, int i, int j, int *ex_it)
+void flood_fill(t_game *game, int i, int j, int *ex_it)
 {
 	char **map;
 	map = game->map;
@@ -30,8 +30,8 @@ void	flood_fill(t_game *game, int i, int j, int *ex_it)
 	game->map[i][j] = 'V';
 	flood_fill(game, i, j - 1, ex_it);
 	flood_fill(game, i, j + 1, ex_it);
-	flood_fill(game, i + 1, j, ex_it);
 	flood_fill(game, i - 1, j, ex_it);
+	flood_fill(game, i + 1, j, ex_it);
 }
 
 int valid_path(t_game *game, char **map)
@@ -48,7 +48,7 @@ int valid_path(t_game *game, char **map)
 			if(game->map[i][j] == 'P')
 			{
 				game->P_X = i;
-				game->P_Y = i;
+				game->P_Y = j;
 			}
 			if(game->map[i][j] == 'C')
 				game->clct++;

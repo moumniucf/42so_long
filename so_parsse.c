@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:15:44 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/01 18:31:19 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/02 15:58:25 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,33 +78,34 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 		{
 			if(count_c(map, game->width, game->height) == 0)
 			{
-				ft_printf("Error\n");
+				ft_printf("Error1\n");
 				exit(1);
 			}
-			else if(count_e(map, game->width, game->height) != 1 || count_p(map, game->width, game->height) != 1)
+			else if(count_e(map, game->width, game->height) > 1 || count_p(map, game->width, game->height) > 1)
 			{
-				ft_printf("Error\n");
+				ft_printf("Error2\n");
 				exit(1);
 			}
 			else if(size != len_x(map[i]))
 			{
-				ft_printf("Error\n");
+				ft_printf("Error3\n");
 				exit(1);
 			}
 			else if(!invalid_map(game))
 			{
-				ft_printf("Error\n");
+				ft_printf("Error4\n");
 				exit(1);
 			}
 			else if(!valid_chars2(game->map[i][j]))
 			{
-				ft_printf("Error\n");
+				ft_printf("Error char\n");
 				exit(1);
 			}
-			else if(!valid_path(game, map))
-			{
-				ft_printf("OK\n");
-			}
+			// if(!valid_path(game, map))
+			// {
+			// 	ft_printf("Error path\n");
+			// 	exit(1);
+			// }
 			j++;
 		}
 		i++;
