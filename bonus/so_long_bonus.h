@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/02 16:03:05 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/03 15:08:19 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ typedef struct s_game
 	void *win;
 	void *mlx;
 	char **map;
+	int fr;
 	int mvmt;
 	int clct;
 	int *ex_it;
+	char *img[4];
 }	t_game;
 
 # define KEY_ESC 53 
@@ -68,4 +70,6 @@ int 	valid_extention(char *file);
 void 	flood_fill(t_game *game, int x, int y, int *ex_it);
 int valid_chars2(char c);
 int valid_path(t_game *game, char **map);
+char	*ft_itoa(int n);
+void animation(t_game *game);
 #endif

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:59:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/02 17:03:54 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/03 13:33:34 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int move_rig(int keycode, t_game *game)
 		char mvmn;
 		game->height = len_x(game->map[0]);
 		game->width = len_y(game->map);
+		char *n;
 		while(i < game->width)
 		{	
 			j = 0;		
@@ -36,7 +37,7 @@ int move_rig(int keycode, t_game *game)
 					}
 					if(game->map[i][j + 1] == 'H')
 					{
-						ft_printf("U Lose\n");
+						ft_printf("\x1b[31mU Lose\n\x1b[0m");
 						exit(1);
 					}
 					if (game->map[i][j + 1] != '1' && game->map[i][j + 1] != 'E')
@@ -46,7 +47,11 @@ int move_rig(int keycode, t_game *game)
 						game->clct--;
 						game->mvmt++;
 						mvmn = game->mvmt;
-						ft_printf("Moves : %d\n", game->mvmt);
+						mlx_clear_window(game->mlx, game->win);
+						apply_map(game->mlx, game->win, 32, 32, game->map, game);
+						n = ft_itoa(game->mvmt);
+						mlx_string_put(game->mlx, game->win, 0, 5, 0xFFFFFF, " Moves:");
+						mlx_string_put(game->mlx, game->win, 70, 5, 0xFFFFFF, n);
 						break;
 					}
 				}
@@ -54,8 +59,6 @@ int move_rig(int keycode, t_game *game)
 			}
 			i++;
 		}
-		mlx_clear_window(game->mlx, game->win);
-		apply_map(game->mlx, game->win, 32, 32, game->map, game);
 	}
 	return (0);
 }
@@ -69,6 +72,7 @@ int move_lef(int keycode, t_game *game)
 		int j;
 		game->height = len_x(game->map[0]);
 		game->width = len_y(game->map);
+		char *n;
 		while(i < game->width)
 		{
 			j = 0;
@@ -83,7 +87,7 @@ int move_lef(int keycode, t_game *game)
 					}
 					if(game->map[i][j - 1] == 'H')
 					{
-						ft_printf("U Lose\n");
+						ft_printf("\x1b[31mU Lose\n\x1b[0m");
 						exit(1);
 					}
 					if(game->map[i][j - 1] != '1' && game->map[i][j - 1] != 'E')
@@ -92,7 +96,11 @@ int move_lef(int keycode, t_game *game)
 						game->map[i][j] = '0';
 						game->clct--;
 						game->mvmt++;
-						ft_printf("Moves : %d\n", game->mvmt);
+						mlx_clear_window(game->mlx, game->win);
+						apply_map(game->mlx, game->win, 32, 32, game->map, game);
+						n = ft_itoa(game->mvmt);
+						mlx_string_put(game->mlx, game->win, 0, 5, 0xFFFFFF, " Moves:");
+						mlx_string_put(game->mlx, game->win, 70, 5, 0xFFFFFF, n);
 						break;
 					}
 				}
@@ -100,8 +108,6 @@ int move_lef(int keycode, t_game *game)
 			}
 			i++;
 		}
-		mlx_clear_window(game->mlx, game->win);
-		apply_map(game->mlx, game->win, 32, 32, game->map, game);
 	}
 	return(0);
 }
@@ -115,6 +121,7 @@ int move_up(int keycode, t_game *game)
 		int j;
 		game->height = len_x(game->map[0]);
 		game->width = len_y(game->map);
+		char *n;
 		while(i < game->width)
 		{
 			j = 0;
@@ -129,7 +136,7 @@ int move_up(int keycode, t_game *game)
 					}
 					if(game->map[i - 1][j] == 'H')
 					{
-						ft_printf("U Lose\n");
+						ft_printf("\x1b[31mU Lose\n\x1b[0m");
 						exit(1);
 					}
 					if(game->map[i - 1][j] != '1' && game->map[i - 1][j] != 'E')
@@ -138,7 +145,11 @@ int move_up(int keycode, t_game *game)
 						game->map[i][j] = '0';
 						game->clct--;
 						game->mvmt++;
-						ft_printf("Moves : %d\n", game->mvmt);
+						mlx_clear_window(game->mlx, game->win);
+						apply_map(game->mlx, game->win, 32, 32, game->map, game);
+						n = ft_itoa(game->mvmt);
+						mlx_string_put(game->mlx, game->win, 0, 5, 0xFFFFFF, " Moves:");
+						mlx_string_put(game->mlx, game->win, 70, 5, 0xFFFFFF, n);
 						break;
 					}
 				}
@@ -146,8 +157,6 @@ int move_up(int keycode, t_game *game)
 			}
 			i++;
 		}
-		mlx_clear_window(game->mlx, game->win);
-		apply_map(game->mlx, game->win, 32, 32, game->map, game);
 	}
 	return (0);
 }
@@ -161,6 +170,7 @@ int move_dow(int keycode, t_game *game)
 		int j = 0;
 		game->height = len_x(game->map[0]);
 		game->width = len_y(game->map);
+		char *n;
 		while(j < game->height)
 		{
 			i = 0;
@@ -175,7 +185,7 @@ int move_dow(int keycode, t_game *game)
 					}
 					if(game->map[i + 1][j] == 'H')
 					{
-						ft_printf("U Lose\n");
+						ft_printf("\x1b[31mU Lose\n\x1b[0m");
 						exit(1);
 					}
 					if(game->map[i + 1][j] != '1' && game->map[i + 1][j] != 'E')
@@ -184,7 +194,11 @@ int move_dow(int keycode, t_game *game)
 						game->map[i][j] = '0';
 						game->clct--;
 						game->mvmt++;
-						ft_printf("Moves : %d\n", game->mvmt);
+						mlx_clear_window(game->mlx, game->win);
+						apply_map(game->mlx, game->win, 32, 32, game->map, game);
+						n = ft_itoa(game->mvmt);
+						mlx_string_put(game->mlx, game->win, 0, 5, 0xFFFFFF, " Moves:");
+						mlx_string_put(game->mlx, game->win, 70, 5, 0xFFFFFF, n);
 						break;
 					}
 				}
@@ -192,8 +206,6 @@ int move_dow(int keycode, t_game *game)
 			}
 			j++;
 		}
-		mlx_clear_window(game->mlx, game->win);
-		apply_map(game->mlx, game->win, 32, 32, game->map, game);
 	}
 	return (0);
 }
