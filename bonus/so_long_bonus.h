@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/03 15:08:19 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/03 17:20:10 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void 	flood_fill(t_game *game, int x, int y, int *ex_it);
 int valid_chars2(char c);
 int valid_path(t_game *game, char **map);
 char	*ft_itoa(int n);
-void animation(t_game *game);
+int animation(t_game *game);
+void	aplly_images(t_game *game);
 #endif

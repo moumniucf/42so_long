@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:05:54 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/03 14:59:37 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/03 17:27:08 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,10 +108,8 @@ void apply_map(void	*mlx, void *win, int x, int y, char **map, t_game *game)
 			}
 			else if(game->map[i][j] == 'C')
 			{
-				mlx_destroy_image(game->mlx, img4);
-				// mlx_put_image_to_window(game->mlx, game->win ,img4 ,j * x, i * y);
-				animation(game);
-				ft_printf(":ko\n");
+				aplly_images(game);
+				mlx_loop_hook(game->mlx, animation, game);
 			}
 			else if(game->map[i][j] == 'H')
 			{
