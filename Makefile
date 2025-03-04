@@ -43,6 +43,6 @@ clean:
 	@rm -f $(OBSRCS) 
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(BNAME)
 
 re: fclean all
