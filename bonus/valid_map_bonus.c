@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:05:54 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/04 15:55:57 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/04 16:38:51 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void apply_map(void *mlx, void *win, int x, int y, char **map, t_game *game)
 	void *img2;
 	void *img3;
 	void *img4;
-	void *img5;
 	int img_w;
 	int img_h;
 	(void)mlx;
@@ -79,9 +78,8 @@ void apply_map(void *mlx, void *win, int x, int y, char **map, t_game *game)
 	img1 = mlx_xpm_file_to_image(game->mlx, "e.xpm", &img_w, &img_h);
 	img2 = mlx_xpm_file_to_image(game->mlx, "sb.xpm", &img_w, &img_h);
 	img3 = mlx_xpm_file_to_image(game->mlx, "b.xpm", &img_w, &img_h);
-	img4 = mlx_xpm_file_to_image(game->mlx, "coin.xpm", &img_w, &img_h);
-	img5 = mlx_xpm_file_to_image(game->mlx, "police.xpm", &img_w, &img_h);
-	if (!img || !img1 || !img2 || !img3 || !img4 || !img5)
+	img4 = mlx_xpm_file_to_image(game->mlx, "police.xpm", &img_w, &img_h);
+	if (!img || !img1 || !img2 || !img3 || !img4)
 	{
 		exit(1);
 	}
@@ -107,15 +105,9 @@ void apply_map(void *mlx, void *win, int x, int y, char **map, t_game *game)
 			{
 				mlx_put_image_to_window(game->mlx, game->win, img3, j * x, i * y);
 			}
-			// else if (game->map[i][j] == 'C')
-			// {
-			// 	animation(game, i, j);
-			// 	// mlx_loop_hook(game->mlx, animation, game);
-			// 	mlx_put_image_to_window(game->mlx, game->win, game->img[game->fr], j * x, i * y);
-			// }
 			else if (game->map[i][j] == 'H')
 			{
-				mlx_put_image_to_window(game->mlx, game->win, img5, j * x, i * y);
+				mlx_put_image_to_window(game->mlx, game->win, img4, j * x, i * y);
 			}
 			j++;
 		}

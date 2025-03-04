@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/04 16:02:29 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/04 16:42:49 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ int move_lef(int keycode, t_game *game);
 int move_player(int keycode, t_game *game);
 int move_up(int keycode, t_game *game);
 int move_dow(int keycode, t_game *game);
-int count_c(char **map, int x, int y);
+int count_c(char **map);
 void so_parss(int ac, char **av, char **map, t_game *game);
-int count_p(char **map, int x, int y);
-int count_e(char **map, int x, int y);
+int count_p(char **map);
+int count_e(char **map);
 int invalid_map(t_game *game);
 int valid_extention(char *file);
 void flood_fill(t_game *game, int x, int y, int *ex_it);

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 15:50:02 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/04 16:14:56 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/04 16:43:06 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int animation(t_game *game, int i, int j)
 	static int frame_count = 0;
 	(void)i;
 	(void)j;
-	if (frame_count % (10 * count_c(game->map, game->width, game->height)) == 0)
+	if (frame_count % (10 * count_c(game->map)) == 0)
 	{
 		game->fr = (game->fr + 1) % 4;
 	}
