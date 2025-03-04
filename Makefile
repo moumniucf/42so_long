@@ -40,7 +40,7 @@ $(BNAME): $(BOB_SRCS)
 	@$(CC) $(CFLAGS) $(MFLAG) $(BOB_SRCS) -o $(BNAME)
 
 clean:
-	@rm -f $(OBSRCS) 
+	@rm -f $(OBSRCS) $(BOB_SRCS)
 
 fclean: clean
 	@rm -f $(NAME) $(BNAME)
