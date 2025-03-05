@@ -81,7 +81,7 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 				ft_printf("Error1\n");
 				exit(1);
 			}
-			else if(count_e(map, game->width, game->height) > 1 || count_p(map, game->width, game->height) > 1)
+			else if(count_e(map) > 1 || count_p(map) > 1)
 			{
 				ft_printf("Error2\n");
 				exit(1);
@@ -101,7 +101,7 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 				ft_printf("Error char\n");
 				exit(1);
 			}
-			// else if(!valid_path(game, game->P_X, game->P_Y))
+			// else if(!valid_path(game))
 			// {
 			// 	ft_printf("Error path \n");
 			// 	exit(1);

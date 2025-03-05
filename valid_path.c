@@ -33,7 +33,11 @@ void flood_fill(t_game *game, int i, int j, int *ex_it)
 	flood_fill(game, i - 1, j, ex_it);
 	flood_fill(game, i + 1, j, ex_it);
 }
+
 // int valid_path(t_game *game)
 // {
-	
+// 	int i = 0;
+// 	int j = 0;
+// 	flood_fill(game, i, j, game.ex_it);
+// 	return(ex_it == 1 && game.clct == 0);
 // }

@@ -26,19 +26,20 @@ int animation(t_game *game, int i, int j)
 	static int frame_count = 0;
 	(void)i;
 	(void)j;
-	if (frame_count % (15 * count_c(game->map)) == 0)
+	if (frame_count % 20 == 0)
 	{
 		game->fr = (game->fr + 1) % 4;
 	}
 	frame_count++;
 	aplly_images(game);
-	mlx_put_image_to_window(game->mlx, game->win, game->img[game->fr], j * 32, i * 32);
 	return (0);
 }
 
 int all_animations(t_game *game)
 {
 	int i = 0;
+	int j = 0;
+	animation(game, i, j);
 	while (game->map[i])
 	{
 		int j = 0;
@@ -46,7 +47,7 @@ int all_animations(t_game *game)
 		{
 			if (game->map[i][j] == 'C')
 			{
-				animation(game, i, j);
+				mlx_put_image_to_window(game->mlx, game->win, game->img[game->fr], j * 32, i * 32);
 			}
 			j++;
 		}

@@ -68,4 +68,5 @@ int		invalid_map(t_game *game);
 int 	valid_extention(char *file);
 void 	flood_fill(t_game *game, int x, int y, int *ex_it);
 int 	valid_chars2(char c);
+int valid_path(t_game *game);
 #endif
