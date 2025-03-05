@@ -54,7 +54,7 @@ int valid_extention(char *file)
 			dot++;
 		i++;
 	}
-	if (dot > 1)
+	if (dot != 1)
 	{
 		return (0);
 	}
@@ -76,12 +76,12 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 		j = 0;
 		while(j < game->height)
 		{
-			if(count_c(map, game->width, game->height) == 0)
+			if(count_c(map) == 0)
 			{
 				ft_printf("Error1\n");
 				exit(1);
 			}
-			else if(count_e(map) > 1 || count_p(map) > 1)
+			else if(count_e(map) != 1 || count_p(map) != 1)
 			{
 				ft_printf("Error2\n");
 				exit(1);

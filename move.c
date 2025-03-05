@@ -14,7 +14,7 @@
 
 int move_rig(int keycode, t_game *game)
 {
-	game->clct = count_c(game->map, game->width, game->height);
+	game->clct = count_c(game->map);
 	if (keycode == KEY_RIG || keycode == KEY_D)
 	{
 		int i = 0;
@@ -55,7 +55,7 @@ int move_rig(int keycode, t_game *game)
 
 int move_lef(int keycode, t_game *game)
 {
-	game->clct = count_c(game->map, game->width, game->height);
+	game->clct = count_c(game->map);
 	if(keycode == KEY_LEF || keycode == KEY_A)
 	{
 		int i = 0;
@@ -96,7 +96,7 @@ int move_lef(int keycode, t_game *game)
 
 int move_up(int keycode, t_game *game)
 {
-	game->clct = count_c(game->map, game->width, game->height);
+	game->clct = count_c(game->map);
 	if(keycode == KEY_W || keycode == KEY_UP)
 	{
 		int i = 0;
@@ -137,7 +137,7 @@ int move_up(int keycode, t_game *game)
 
 int move_dow(int keycode, t_game *game)
 {
-	game->clct = count_c(game->map, game->width, game->height);
+	game->clct = count_c(game->map);
 	if(keycode == KEY_S || keycode == KEY_DOW)
 	{
 		int i;

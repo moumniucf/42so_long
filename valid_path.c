@@ -16,7 +16,7 @@ void flood_fill(t_game *game, int i, int j, int *ex_it)
 {
 	char **map;
 	map = game->map;
-	game->clct = count_c(map, game->x, game->y);
+	game->clct = count_c(map);
 	game->height = len_y(map);
 	game->width = len_x(*map);
 	if(i < 0 || j < 0 || i >= game->height || j >= game->width)

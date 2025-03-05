@@ -29,7 +29,7 @@ int	press_x(t_game *game)
 	return (0);
 }
 
-int count_c(char **map, int x, int y)
+int count_c(char **map)
 {
 	if(!map)
 		return (0);
@@ -37,10 +37,10 @@ int count_c(char **map, int x, int y)
 	int j;
 	int c = 0;
 	i = 0;
-	while(i < x && map[i])
+	while(map[i])
 	{
 		j = 0;
-		while(j < y && map[i][j])
+		while(map[i][j])
 		{
 			if(map[i][j] == 'C')
 			{
@@ -52,16 +52,16 @@ int count_c(char **map, int x, int y)
 	}
 	return (c);
 }
-int count_p(char **map, int x, int y)
+int count_p(char **map)
 {
 	int i;
 	int j;
 	int c = 0;
 	i = 0;
-	while(i < x && map[i])
+	while(map[i])
 	{
 		j = 0;
-		while(j < y && map[i][j])
+		while(map[i][j])
 		{
 			if(map[i][j] == 'P')
 			{
@@ -73,16 +73,16 @@ int count_p(char **map, int x, int y)
 	}
 	return (c);
 }
-int count_e(char **map, int x, int y)
+int count_e(char **map)
 {
 	int i;
 	int j;
 	int c = 0;
 	i = 0;
-	while(i < x && map[i])
+	while(map[i])
 	{
 		j = 0;
-		while(j < y && map[i][j])
+		while(map[i][j])
 		{
 			if(map[i][j] == 'E')
 			{
