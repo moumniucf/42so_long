@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 15:06:32 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/04 13:47:51 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/05 16:43:34 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,14 @@ void flood_fill(t_game *game, int i, int j, int *ex_it)
 
 int valid_path(t_game *game)
 {
-    int i = 0;
-    int j = 0;
     int exit_found = 0;
-    flood_fill(game, i, j, &exit_found);
+	int i = 0;
+	int j = 0;
+    if(game->map[i][j] == 'P')
+		flood_fill(game, i, j, &exit_found);
     return (exit_found == 1 && game->clct == 0);
 }
+
 // #include <stdio.h>
 // int main() {
 //     t_game *game;
