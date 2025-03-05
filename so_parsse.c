@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:15:44 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/04 12:38:36 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:38:52 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int valid_extention(char *file)
 			dot++;
 		i++;
 	}
-	if (dot != 1)
+	if (dot != 1 || len - 4 == 0)
 	{
 		return (0);
 	}
@@ -101,7 +101,7 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 				ft_printf("Error char\n");
 				exit(1);
 			}
-			// else if(!valid_path(map, i, j, game->clct))
+			// if(!valid_path(game))
 			// {
 			// 	ft_printf("Error path \n");
 			// 	exit(1);
