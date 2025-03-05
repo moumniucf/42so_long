@@ -70,7 +70,7 @@ void flood_fill(t_game *game, int x, int y, int *ex_it);
 int valid_chars2(char c);
 int valid_path(t_game *game, char **map);
 char *ft_itoa(int n);
-int animation(t_game *game, int i, int j);
+int animation(t_game *game);
 int all_animations(t_game *game);
 void aplly_images(t_game *game);
 #endif

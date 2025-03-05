@@ -47,6 +47,7 @@ int main(int ac, char **av)
 	game.win = mlx_new_window(game.mlx, game.x * 32, game.y * 32, "./so_long_bonus");
 	game.mvmt = 0;
 	game.clct = 0;
+	game.fr = 0;
 	apply_map(game.mlx, game.win, 32, 32, game.map, &game);
 	mlx_loop_hook(game.mlx, all_animations, &game);
 	mlx_key_hook(game.win, move_player, &game);

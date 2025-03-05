@@ -21,11 +21,9 @@ void aplly_images(t_game *game)
 	game->img[2] = mlx_xpm_file_to_image(game->mlx, "fr3.xpm", &x, &y);
 	game->img[3] = mlx_xpm_file_to_image(game->mlx, "fr4.xpm", &x, &y);
 }
-int animation(t_game *game, int i, int j)
+int animation(t_game *game)
 {
 	static int frame_count = 0;
-	(void)i;
-	(void)j;
 	if (frame_count % 20 == 0)
 	{
 		game->fr = (game->fr + 1) % 4;
@@ -38,8 +36,7 @@ int animation(t_game *game, int i, int j)
 int all_animations(t_game *game)
 {
 	int i = 0;
-	int j = 0;
-	animation(game, i, j);
+	animation(game);
 	while (game->map[i])
 	{
 		int j = 0;

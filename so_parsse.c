@@ -101,7 +101,7 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 				ft_printf("Error char\n");
 				exit(1);
 			}
-			// else if(!valid_path(game))
+			// else if(!valid_path(map, i, j, game->clct))
 			// {
 			// 	ft_printf("Error path \n");
 			// 	exit(1);

@@ -48,6 +48,8 @@ int move_rig(int keycode, t_game *game)
 						game->mvmt++;
 						mvmn = game->mvmt;
 						n = ft_itoa(game->mvmt);
+						mlx_clear_window(game->mlx, game->win);
+						apply_map(game->mlx, game->win, 32, 32, game->map, game);
 						mlx_string_put(game->mlx, game->win, 0, 5, 0xFFFFFF, " Moves:");
 						mlx_string_put(game->mlx, game->win, 70, 5, 0xFFFFFF, n);
 						break;
@@ -57,8 +59,6 @@ int move_rig(int keycode, t_game *game)
 			}
 			i++;
 		}
-		mlx_clear_window(game->mlx, game->win);
-		apply_map(game->mlx, game->win, 32, 32, game->map, game);
 	}
 	return (0);
 }
@@ -97,6 +97,8 @@ int move_lef(int keycode, t_game *game)
 						game->clct--;
 						game->mvmt++;
 						n = ft_itoa(game->mvmt);
+						mlx_clear_window(game->mlx, game->win);
+						apply_map(game->mlx, game->win, 32, 32, game->map, game);
 						mlx_string_put(game->mlx, game->win, 0, 5, 0xFFFFFF, " Moves:");
 						mlx_string_put(game->mlx, game->win, 70, 5, 0xFFFFFF, n);
 						break;
@@ -106,8 +108,6 @@ int move_lef(int keycode, t_game *game)
 			}
 			i++;
 		}
-		mlx_clear_window(game->mlx, game->win);
-		apply_map(game->mlx, game->win, 32, 32, game->map, game);
 	}
 	return (0);
 }
@@ -146,6 +146,8 @@ int move_up(int keycode, t_game *game)
 						game->clct--;
 						game->mvmt++;
 						n = ft_itoa(game->mvmt);
+						mlx_clear_window(game->mlx, game->win);
+						apply_map(game->mlx, game->win, 32, 32, game->map, game);
 						mlx_string_put(game->mlx, game->win, 0, 5, 0xFFFFFF, " Moves:");
 						mlx_string_put(game->mlx, game->win, 70, 5, 0xFFFFFF, n);
 						break;
@@ -155,8 +157,6 @@ int move_up(int keycode, t_game *game)
 			}
 			i++;
 		}
-		mlx_clear_window(game->mlx, game->win);
-		apply_map(game->mlx, game->win, 32, 32, game->map, game);
 	}
 	return (0);
 }
@@ -195,6 +195,8 @@ int move_dow(int keycode, t_game *game)
 						game->clct--;
 						game->mvmt++;
 						n = ft_itoa(game->mvmt);
+						mlx_clear_window(game->mlx, game->win);
+						apply_map(game->mlx, game->win, 32, 32, game->map, game);
 						mlx_string_put(game->mlx, game->win, 0, 5, 0xFFFFFF, " Moves:");
 						mlx_string_put(game->mlx, game->win, 70, 5, 0xFFFFFF, n);
 						break;
@@ -204,8 +206,6 @@ int move_dow(int keycode, t_game *game)
 			}
 			j++;
 		}
-		mlx_clear_window(game->mlx, game->win);
-		apply_map(game->mlx, game->win, 32, 32, game->map, game);
 	}
 	return (0);
 }

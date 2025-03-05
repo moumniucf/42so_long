@@ -38,6 +38,6 @@ void flood_fill(t_game *game, int i, int j, int *ex_it)
 // {
 // 	int i = 0;
 // 	int j = 0;
-// 	flood_fill(game, i, j, game.ex_it);
-// 	return(ex_it == 1 && game.clct == 0);
+// 	flood_fill(game, i, j, game-ex_it);
+// 	return(game->ex_it == 1 && game->clct == 0);
 // }
