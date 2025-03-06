@@ -6,16 +6,18 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:51:41 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/06 12:52:21 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:08:08 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
 int ft_strlen(char *s)
 {
-	int i;
+	int	i;
+
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		i++;
 	}

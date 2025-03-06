@@ -6,15 +6,12 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 15:06:32 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/06 12:57:53 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:33:34 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
-#include <string.h>
-
-
 // int len_x(char *map)
 // {
 // 	if(!map)
@@ -62,9 +59,10 @@ int valid_path(t_game *game)
     game->width = len_x(game->map[0]);
 
     int cl = 0;
+	cl = count_c(game->map);
     int ext = 0;
-	// char **map_c;
-	// game->map = map_c;
+	game->p_y = 1;
+	game->p_x = 1;
     char **map_c = malloc(sizeof(char *) * (game->height + 1));
     int i = 0;
     while (i < game->height)
@@ -73,16 +71,14 @@ int valid_path(t_game *game)
         i++;
     }
     map_c[i] = NULL;
-    flood_fill(map_c, game->P_X, game->P_Y, game, &cl, &ext);
+    flood_fill(map_c, game->p_x, game->p_y, game, &cl, &ext);
     return (cl > 0 && ext);
 }
 
 // int main()
 // {
 //     t_game *game = malloc(sizeof(t_game));
-//     if (!game)
-//         return 1;
-// 	// t_game *game;
+
 
 //     char *map[] = {
 //     "1111111111111",
@@ -91,7 +87,7 @@ int valid_path(t_game *game)
 //     "1000C00100001",
 //     "10000C0000001",
 //     "1000000000C01",
-//     "1111110111111",
+//     "1111111101111",
 //     "1000CC0000001",
 //     "1000000C10101",
 //     "10000C0000001",
@@ -102,8 +98,8 @@ int valid_path(t_game *game)
 // };
 
 //     game->map = map;
-//     game->P_X = 1;
-//     game->P_Y = 1;
+//     // game->P_X = 1;
+//     // game->P_Y = 1;
 
 //     if (valid_path(game))
 //         printf("Valid path exists and all collectibles were collected!\n");
