@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/04 16:42:49 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/06 12:37:30 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,5 @@ char *ft_itoa(int n);
 int animation(t_game *game);
 int all_animations(t_game *game);
 void aplly_images(t_game *game);
+char	*ft_strdup(const char *s1);
 #endif

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/04 12:40:32 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/06 12:52:27 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,9 @@ int		count_p(char **map);
 int 	count_e(char **map);
 int		invalid_map(t_game *game);
 int 	valid_extention(char *file);
-void 	flood_fill(t_game *game, int x, int y, int *ex_it);
+void	flood_fill(char **map_c, int x, int y, t_game *game, int *cl, int *exit);
 int 	valid_chars2(char c);
 int valid_path(t_game *game);
+void	so2_parss(int ac, char **av, char **map, t_game *game);
+int ft_strlen(char *s);
 #endif

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:15:44 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/05 16:42:11 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/06 12:59:05 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,11 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 	game->height = len_x(*game->map);
 	game->width = len_y(game->map);
 	i = 0;
+	// if(!valid_path(game))
+	// {
+	// 	ft_printf("Error6666\n");
+	// 	exit(1);
+	// }
 	while(i < game->width)
 	{
 		j = 0;
@@ -101,11 +106,11 @@ void	so_parss(int ac, char **av, char **map, t_game *game)
 				ft_printf("Error char\n");
 				exit(1);
 			}
-			if(!valid_path(game))
-			{
-				ft_printf("Error path \n");
-				exit(1);
-			}
+			// if(!valid_path(game))
+			// {
+			// 	ft_printf("Error path \n");
+			// 	exit(1);
+			// }
 			j++;
 		}
 		i++;

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/01 12:08:38 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/06 12:42:38 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int main(int ac, char **av)
 		exit(1);
 	}
 	so_parss(ac, av, game.map, &game);
+	so2_parss(ac, av, game.map, &game);
 	game.x = len_x(*game.map);
 	game.y = len_y(game.map);
 	game.mlx = mlx_init();

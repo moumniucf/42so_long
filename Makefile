@@ -8,7 +8,7 @@ MFLAG = -lmlx -framework OpenGL -framework AppKit
 SRCS = so_long.c valid_map.c getnextline/get_next_line.c getnextline/get_next_line_utils.c move.c \
        press_key.c printf/ft_printf.c printf/ft_putchar.c printf/ft_puthex.c printf/ft_putnbr.c \
        printf/ft_putpoint.c printf/ft_putprc.c printf/ft_putstr.c printf/ft_putunsigned.c so_parsse.c \
-       valid_path.c valid_char.c
+       valid_path.c valid_char.c parsse_h2.c 
 
 BSRCS = bonus/so_long_bonus.c\
 bonus/valid_map_bonus.c bonus/getnextline/get_next_line.c bonus/getnextline/get_next_line_utils.c bonus/move_bonus.c\
