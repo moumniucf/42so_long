@@ -6,13 +6,13 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/04 16:39:10 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/06 16:11:56 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int move_player(int keycode, t_game *game)
+int	move_player(int keycode, t_game *game)
 {
 	if (keycode == KEY_RIG || keycode == KEY_D)
 		move_rig(keycode, game);
@@ -27,13 +27,14 @@ int move_player(int keycode, t_game *game)
 	return (0);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
+	t_game	game;
+
 	if (ac != 2)
 		return (0);
 	(void)ac;
 	(void)av;
-	t_game game;
 	game.map = reading_map(av[1]);
 	if (!valid_extention(av[1]))
 	{

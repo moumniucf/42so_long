@@ -6,17 +6,19 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:05:54 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/04 16:38:51 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/06 16:22:29 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int len_x(char *map)
+int	len_x(char *map)
 {
+	int	x;
+
 	if (!map)
-		exit(0);
-	int x = 0;
+		return (0);
+	x = 0;
 	while (map[x] && map[x] != '\n')
 	{
 		x++;
@@ -24,22 +26,30 @@ int len_x(char *map)
 	return (x);
 }
 
-int len_y(char **map)
+int	len_y(char **map)
 {
+	int	y;
+
 	if (!map)
 		return (0);
-	int y = 0;
+	y = 0;
 	while (map[y])
 	{
 		y++;
 	}
 	return (y);
 }
-char **reading_map(char *file)
+
+char	**reading_map(char *file)
 {
-	int fd = open(file, O_RDONLY);
-	int height = 0;
-	char *line = get_next_line(fd);
+	char	**map;
+	int		fd;
+	int		height;
+	char	*line;
+	int		i;
+
+	fd = open(file, O_RDONLY);
+	line = get_next_line(fd);
 	while (line)
 	{
 		height++;
@@ -48,8 +58,8 @@ char **reading_map(char *file)
 	}
 	close(fd);
 	fd = open(file, O_RDONLY);
-	char **map = malloc((height + 1) * sizeof(char *));
-	int i = 0;
+	map = malloc((height + 1) * sizeof(char *));
+	i = 0;
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -61,15 +71,18 @@ char **reading_map(char *file)
 	return (map);
 }
 
-void apply_map(void *mlx, void *win, int x, int y, char **map, t_game *game)
+void	apply_map(void *mlx, void *win, int x, int y, char **map, t_game *game)
 {
-	void *img;
-	void *img1;
-	void *img2;
-	void *img3;
-	void *img4;
-	int img_w;
-	int img_h;
+	void	*img;
+	void	*img1;
+	void	*img2;
+	void	*img3;
+	void	*img4;
+	int		img_w;
+	int		img_h;
+	int		i;
+	int		j;
+
 	(void)mlx;
 	(void)win;
 	(void)map;
@@ -83,10 +96,10 @@ void apply_map(void *mlx, void *win, int x, int y, char **map, t_game *game)
 	{
 		exit(1);
 	}
-	int i = 0;
+	i = 0;
 	while (game->map[i])
 	{
-		int j = 0;
+		j = 0;
 		while (game->map[i][j])
 		{
 			if (game->map[i][j] == '1')
