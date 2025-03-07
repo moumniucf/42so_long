@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/07 14:50:24 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/07 15:15:19 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int		move_lef(int keycode, t_game *game);
 int		move_player(int keycode, t_game *game);
 int		move_up(int keycode, t_game *game);
 int		move_dow(int keycode, t_game *game);
-// int		move_p(int keycode, t_game *game, int x, int y);
 int		count_c(char **map);
 void	so_parss(int ac, char **av, char **map, t_game *game);
 int		count_p(char **map);
@@ -71,4 +70,5 @@ int		valid_chars2(char c);
 int		valid_path(t_game *game);
 void	so2_parss(int ac, char **av, char **map, t_game *game);
 int		ft_strlen(char *s);
+void	find_pl(t_game *game);
 #endif

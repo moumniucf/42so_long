@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 12:30:13 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/07 14:50:33 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/07 15:16:04 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,21 @@ int	valid_chars2(char c)
 	}
 	return (0);
 }
+// void	find_pl(t_game *game)
+// {
+// 	int i;
+// 	int j;
+// 	i = 0;
+// 	while(i < game->height)
+// 	{
+// 		j = 0;
+// 		while(j < game->width)
+// 		{
+// 			if(game->map[i][j] == 'P')
+// 			{
+// 				game->p_x = j;
+// 				game->p_y = i;
+// 			}
+// 		}
+// 	}
+// }

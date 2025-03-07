@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:59:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/07 15:01:01 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/07 15:58:15 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	move_p(t_game *game, int x, int y)
 	int	j;
 	int	nx;
 	int	ny;
+	char *n;
 
 	i = 0;
 	while (i < game->width)
@@ -44,10 +45,12 @@ void	move_p(t_game *game, int x, int y)
 					game->map[nx][ny] = 'P';
 					game->map[i][j] = '0';
 					game->mvmt++;
-					ft_printf("Moves: %d\n", game->mvmt);
+					n = ft_itoa(game->mvmt);
+					mlx_clear_window(game->mlx, game->win);
+					apply_map(game->mlx, game->win, 32, 32, game->map, game);
+					mlx_string_put(game->mlx, game->win, 0, 10, 0xFFFFFF, "Moves:");
+					mlx_string_put(game->mlx, game->win, 70, 10, 0xFFFFFF, n);
 				}
-				mlx_clear_window(game->mlx, game->win);
-				apply_map(game->mlx, game->win, 32, 32, game->map, game);
 				return ;
 			}
 			j++;
@@ -55,4 +58,3 @@ void	move_p(t_game *game, int x, int y)
 		i++;
 	}
 }
-

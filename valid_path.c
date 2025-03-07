@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 15:06:32 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/06 15:33:34 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/07 15:42:24 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,53 @@
 // 	return (y);
 // }
 
+// int	count_c(char **map)
+// {
+// 	int	i;
+// 	int	j;
+// 	int	c;
+
+// 	if (!map)
+// 		return (0);
+// 	c = 0;
+// 	i = 0;
+// 	while (map[i])
+// 	{
+// 		j = 0;
+// 		while (map[i][j])
+// 		{
+// 			if (map[i][j] == 'C')
+// 			{
+// 				c++;
+// 			}
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	return (c);
+// }
+
+void	find_pl(t_game *game)
+{
+	int i;
+	int j;
+	i = 0;
+	while(i < game->height)
+	{
+		j = 0;
+		while(j < game->width)
+		{
+			if(game->map[i][j] == 'P')
+			{
+				game->p_x = j;
+				game->p_y = i;
+				return ;
+			}
+			j++;
+		}
+		i++;
+	}
+}
 void flood_fill(char **map_c, int x, int y, t_game *game, int *cl, int *exit)
 {
     if (x < 0 || y < 0 || x >= game->width || y >= game->height)
@@ -58,11 +105,10 @@ int valid_path(t_game *game)
     game->height = len_y(game->map);
     game->width = len_x(game->map[0]);
 
-    int cl = 0;
+    int cl;
 	cl = count_c(game->map);
-    int ext = 0;
-	game->p_y = 1;
-	game->p_x = 1;
+    int ext;
+	find_pl(game);
     char **map_c = malloc(sizeof(char *) * (game->height + 1));
     int i = 0;
     while (i < game->height)
@@ -72,7 +118,7 @@ int valid_path(t_game *game)
     }
     map_c[i] = NULL;
     flood_fill(map_c, game->p_x, game->p_y, game, &cl, &ext);
-    return (cl > 0 && ext);
+    return (cl == 0 && ext == 1);
 }
 
 // int main()
@@ -87,19 +133,17 @@ int valid_path(t_game *game)
 //     "1000C00100001",
 //     "10000C0000001",
 //     "1000000000C01",
-//     "1111111101111",
+//     "1111110111111",
 //     "1000CC0000001",
 //     "1000000C10101",
 //     "10000C0000001",
-//     "100C00000E001",
+//     "100C000000E01",
 //     "1000000C00001",
 //     "1111111111111",
 //     NULL
 // };
 
 //     game->map = map;
-//     // game->P_X = 1;
-//     // game->P_Y = 1;
 
 //     if (valid_path(game))
 //         printf("Valid path exists and all collectibles were collected!\n");
