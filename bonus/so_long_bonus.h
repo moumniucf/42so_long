@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/06 16:14:41 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:57:27 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	apply_map(void *mlx, void *win, int x, int y, char **map, t_game *game);
 int		len_y(char **map);
 int		len_x(char *map);
 int		prees_esc(int keycode, t_game *game);
+void	move_p(t_game *game, int x, int y);
 int		press_x(t_game *game);
 int		move_rig(int keycode, t_game *game);
 int		move_lef(int keycode, t_game *game);

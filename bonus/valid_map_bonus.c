@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:05:54 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/06 16:22:29 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:59:10 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	**reading_map(char *file)
 {
 	char	**map;
 	int		fd;
-	int		height;
+	int		height = 0;
 	char	*line;
 	int		i;
 

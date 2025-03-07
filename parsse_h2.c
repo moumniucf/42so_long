@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:37:43 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/06 15:38:21 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:14:46 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ void	so2_parss(int ac, char **av, char **map, t_game *game)
 	(void)ac;
 	(void)av;
 	(void)map;
+	// t_game *game = malloc(sizeof(t_game));
+	game->map = map;
+	game->p_x = 1;
+    game->p_y = 1;
 	game->height = len_x(*game->map);
 	game->width = len_y(game->map);
 	i = 0;
@@ -30,7 +34,7 @@ void	so2_parss(int ac, char **av, char **map, t_game *game)
 		{
 			if (!valid_path(game))
 			{
-				ft_printf("Error\n");
+				ft_printf("Error P\n");
 				exit(1);
 			}
 			j++;

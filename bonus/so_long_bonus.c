@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/06 16:11:56 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:59:52 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 int	move_player(int keycode, t_game *game)
 {
 	if (keycode == KEY_RIG || keycode == KEY_D)
-		move_rig(keycode, game);
+		move_p(game, 0, 1);
 	else if (keycode == KEY_LEF || keycode == KEY_A)
-		move_lef(keycode, game);
+		move_p(game, 0, -1);
 	else if (keycode == KEY_ESC)
 		prees_esc(keycode, game);
 	else if (keycode == KEY_W || keycode == KEY_UP)
-		move_up(keycode, game);
+		move_p(game, -1, 0);
 	else if (keycode == KEY_S || keycode == KEY_DOW)
-		move_dow(keycode, game);
+		move_p(game, 1, 0);
 	return (0);
 }
 
