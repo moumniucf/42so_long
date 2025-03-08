@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid_path.c                                       :+:      :+:    :+:   */
+/*   valid_path_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 15:06:32 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/08 14:04:36 by youmoumn         ###   ########.fr       */
+/*   Created: 2025/03/08 13:35:28 by youmoumn          #+#    #+#             */
+/*   Updated: 2025/03/08 13:37:37 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	find_pl(t_game *game)
 {
@@ -24,8 +24,8 @@ void	find_pl(t_game *game)
 		{
 			if(game->map[i][j] == 'P')
 			{
-				game->p_x = j;
-				game->p_y = i;
+				game->px = j;
+				game->py = i;
 				return ;
 			}
 			j++;
@@ -69,7 +69,7 @@ int valid_path(t_game *game)
         i++;
     }
     map_c[i] = NULL;
-    flood_fill(map_c, game->p_x, game->p_y, game, &cl, &ext);
+    flood_fill(map_c, game->px, game->py, game, &cl, &ext);
 	i = 0;
 	while(i < game->height)
 	{

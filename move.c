@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 11:16:27 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/08 11:27:11 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/08 16:08:50 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	move_p(t_game *game, int x, int y)
 	int	ny;
 
 	i = 0;
-	while (i < game->width)
+	while (i < game->height)
 	{
 		j = 0;
-		while (j < game->height)
+		while (j < game->width)
 		{
 			if (game->map[i][j] == 'P')
 			{

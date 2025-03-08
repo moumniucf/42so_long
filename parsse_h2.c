@@ -6,21 +6,17 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:37:43 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/07 14:14:46 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:39:35 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	so2_parss(int ac, char **av, char **map, t_game *game)
+void	so2_parss(char **map, t_game *game)
 {
 	int	i;
 	int	j;
 
-	(void)ac;
-	(void)av;
-	(void)map;
-	// t_game *game = malloc(sizeof(t_game));
 	game->map = map;
 	game->p_x = 1;
     game->p_y = 1;

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/08 11:50:38 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/08 16:35:11 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	leaks()
 }
 int	main(int ac, char **av)
 {
-	atexit(leaks);
+	// atexit(leaks);
 	t_game	*game;
 
 	if (ac != 2)
@@ -46,8 +46,8 @@ int	main(int ac, char **av)
 		ft_printf("Error\n");
 		exit(1);
 	}
-	so_parss(ac, av, game->map, game);
-	so2_parss(ac, av, game->map, game);
+	so_parss(game->map, game);
+	so2_parss(game->map, game);
 	game->x = len_x(*game->map);
 	game->y = len_y(game->map);
 	game->mlx = mlx_init();
@@ -58,4 +58,6 @@ int	main(int ac, char **av)
 	mlx_key_hook(game->win, move_player, game);
 	mlx_hook(game->win, KEY_EXIT, 0, press_x, game);
 	mlx_loop(game->mlx);
+	free_map(game->map);
+	return (0);
 }

@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid_char.c                                       :+:      :+:    :+:   */
+/*   parsse2_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 12:30:13 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/08 14:04:02 by youmoumn         ###   ########.fr       */
+/*   Created: 2025/03/08 14:42:45 by youmoumn          #+#    #+#             */
+/*   Updated: 2025/03/08 14:44:18 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
-int	valid_chars2(char c)
-{
-	int		i;
-	char	*s;
-
-	s = "01PEC";
-	i = 0;
-	while (i < 5)
-	{
-		if (s[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-void	free_map(char **map)
+void	so2_parss(char **map, t_game *game)
 {
 	int	i;
+	int	j;
 
-	if(!map)
-		return ;
+	game->map = map;
+	game->px = 1;
+    game->py = 1;
+	game->height = len_x(*game->map);
+	game->width = len_y(game->map);
 	i = 0;
-	while(map[i])
+	while (i < game->height)
 	{
-		free(map[i]);
+		j = 0;
+		while (j < game->width)
+		{
+			if (!valid_path(game))
+			{
+				ft_printf("Error P\n");
+				exit(1);
+			}
+			j++;
+		}
 		i++;
 	}
-	free(map);
 }

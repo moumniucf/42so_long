@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:15:44 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/08 12:22:11 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/08 16:01:12 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ int	valid_extention(char *file)
 	int		i;
 	char	*ber;
 
-	if(!file)
-	{
-		ft_printf("ko\n");
-		exit(1);
-	}
 	len = ft_strlen(file);
 	dot = 0;
 	i = 0;
@@ -70,14 +65,17 @@ int	valid_extention(char *file)
 	return (1);
 }
 
-void	so_parss(int ac, char **av, char **map, t_game *game)
+void	so_parss(char **map, t_game *game)
 {
 	int	i;
 	int	j;
 	int	size;
 
-	(void)ac;
-	(void)av;
+	if(!map)
+	{
+		ft_printf("Error\n");
+		exit(1);
+	}
 	size = ft_strlen(*map) - 1;
 	game->height = len_x(*game->map);
 	game->width = len_y(game->map);

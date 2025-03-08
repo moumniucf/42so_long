@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/08 12:18:43 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/08 15:12:33 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ char	**reading_map(char *file)
 	int		i;
 
 	fd = open(file, O_RDONLY);
+	if(fd == -1)
+		return (NULL);
 	line = get_next_line(fd);
 	height = 0;
 	while (line)
@@ -58,7 +60,14 @@ char	**reading_map(char *file)
 		line = get_next_line(fd);
 	}
 	fd = open(file, O_RDONLY);
+	if(fd == -1)
+		return (NULL);
 	map = malloc((height + 1) * sizeof(char *));
+	if(!map)
+	{
+		return (free(map), NULL);
+		close(fd);
+	}
 	i = 0;
 	line = get_next_line(fd);
 	while (line)
@@ -69,7 +78,6 @@ char	**reading_map(char *file)
 	}
 	map[i] = NULL;
 	close (fd);
-	free(line);
 	return (map);
 }
 
