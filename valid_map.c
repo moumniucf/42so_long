@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/06 15:47:00 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/08 12:18:43 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ char	**reading_map(char *file)
 	}
 	map[i] = NULL;
 	close (fd);
+	free(line);
 	return (map);
 }
 
@@ -86,13 +87,12 @@ void	apply_map(void	*mlx, void *win, int x, int y, char **map, t_game *game)
 
 	(void)mlx;
 	(void)win;
-	(void)map;
 	img = mlx_xpm_file_to_image(game->mlx, "hayt.xpm", &img_w, &img_h);
 	img1 = mlx_xpm_file_to_image(game->mlx, "e.xpm", &img_w, &img_h);
 	img2 = mlx_xpm_file_to_image(game->mlx, "sb.xpm", &img_w, &img_h);
 	img3 = mlx_xpm_file_to_image(game->mlx, "b.xpm", &img_w, &img_h);
 	img4 = mlx_xpm_file_to_image(game->mlx, "coin.xpm", &img_w, &img_h);
-	if (!img || !img1 || !img2 || !img3 || !img4)
+	if (!img || !img1 || !img2 || !img3 || !img4 || !map)
 	{
 		exit(1);
 	}

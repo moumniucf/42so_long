@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:15:44 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/06 15:38:46 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/08 12:22:11 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ int	valid_extention(char *file)
 	int		i;
 	char	*ber;
 
+	if(!file)
+	{
+		ft_printf("ko\n");
+		exit(1);
+	}
 	len = ft_strlen(file);
 	dot = 0;
 	i = 0;

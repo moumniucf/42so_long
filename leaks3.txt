@@ -1,0 +1,273 @@
+Moves: 1
+Moves: 2
+Moves: 3
+Moves: 4
+Moves: 5
+Moves: 6
+Moves: 7
+Moves: 8
+Moves: 9
+Moves: 10
+Moves: 11
+Moves: 12
+Moves: 13
+Moves: 14
+Moves: 15
+Moves: 16
+Moves: 17
+Moves: 18
+Moves: 19
+Moves: 20
+Moves: 21
+Moves: 22
+Moves: 23
+Moves: 24
+Moves: 25
+Moves: 26
+Moves: 27
+Moves: 28
+Moves: 29
+Moves: 30
+Moves: 31
+Moves: 32
+Moves: 33
+Moves: 34
+Moves: 35
+Moves: 36
+Moves: 37
+Moves: 38
+Moves: 39
+Moves: 40
+Moves: 41
+Moves: 42
+Moves: 43
+Moves: 44
+Moves: 45
+Moves: 46
+Moves: 47
+Moves: 48
+Moves: 49
+Moves: 50
+Moves: 51
+Moves: 52
+Moves: 53
+Moves: 54
+Moves: 55
+Moves: 56
+Moves: 57
+Moves: 58
+Moves: 59
+Moves: 60
+Moves: 61
+Moves: 62
+Moves: 63
+Moves: 64
+Moves: 65
+Moves: 66
+Moves: 67
+Moves: 68
+Moves: 69
+Moves: 70
+Moves: 71
+Moves: 72
+Moves: 73
+Moves: 74
+Moves: 75
+Moves: 76
+Process:         so_long [2608]
+Path:            /Volumes/VOLUME/*/so_long
+Load Address:    0x10c0d9000
+Identifier:      so_long
+Version:         ???
+Code Type:       X86-64
+Parent Process:  zsh [85168]
+
+Date/Time:       2025-03-08 12:19:04.922 +0000
+Launch Time:     2025-03-08 12:18:50.225 +0000
+OS Version:      Mac OS X 10.15.7 (19H2026)
+Report Version:  7
+Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
+Analysis Tool Version:  Xcode 12.4 (12D4e)
+
+Physical footprint:         27.1M
+Physical footprint (peak):  29.6M
+----
+
+leaks Report Version: 4.0
+Process 2608: 23709 nodes malloced for 11988 KB
+Process 2608: 169 leaks for 18928 total leaked bytes.
+
+    169 (18.5K) << TOTAL >>
+
+      93 (10.2K) ROOT LEAK: 0x7fce3d604090 [112]
+         91 (9.95K) 0x7fce3d604170 [112]
+            89 (9.73K) 0x7fce3d604250 [112]
+               87 (9.52K) 0x7fce3d604330 [112]
+                  85 (9.30K) 0x7fce3d604410 [112]
+                     83 (9.08K) 0x7fce3d6044f0 [112]
+                        81 (8.86K) 0x7fce3d6045d0 [112]
+                           79 (8.64K) 0x7fce3d6046b0 [112]
+                              77 (8.42K) 0x7fce3d604790 [112]
+                                 75 (8.20K) 0x7fce3d604870 [112]
+                                    73 (7.98K) 0x7fce3d604950 [112]
+                                       71 (7.77K) 0x7fce3d604a30 [112]
+                                          69 (7.55K) 0x7fce3d604b10 [112]
+                                             67 (7.33K) 0x7fce3d604bf0 [112]
+                                                65 (7.11K) 0x7fce3d604cd0 [112]
+                                                   63 (6.89K) 0x7fce3d604db0 [112]
+                                                      61 (6.67K) 0x7fce3d604e90 [112]
+                                                         59 (6.45K) 0x7fce3d604f70 [112]
+                                                            57 (6.23K) 0x7fce3d605050 [112]
+                                                               55 (6.02K) 0x7fce3d605130 [112]
+                                                                  53 (5.80K) 0x7fce3d605210 [112]
+                                                                     51 (5.58K) 0x7fce3d6052f0 [112]
+                                                                        49 (5.36K) 0x7fce3d6053d0 [112]
+                                                                           47 (5.14K) 0x7fce3d6054b0 [112]
+                                                                              45 (4.92K) 0x7fce3d605590 [112]
+                                                                                 43 (4.70K) 0x7fce3d605670 [112]
+                                                                                    41 (4.48K) 0x7fce3d605750 [112]
+                                                                                       39 (4.27K) 0x7fce3d605830 [112]
+                                                                                          37 (4.05K) 0x7fce3d605910 [112]
+                                                                                             35 (3.83K) 0x7fce3d6059f0 [112]
+                                                                                                33 (3.61K) 0x7fce3d605ad0 [112]
+                                                                                                   31 (3.39K) 0x7fce3d605bb0 [112]
+                                                                                                      29 (3.17K) 0x7fce3d605c90 [112]
+                                                                                                         27 (2.95K) 0x7fce3d605d70 [112]
+                                                                                                            25 (2.73K) 0x7fce3d605e50 [112]
+                                                                                                               23 (2.52K) 0x7fce3d605f30 [112]
+                                                                                                                  21 (2.30K) 0x7fce3d606010 [112]
+                                                                                                                     19 (2.08K) 0x7fce3d6060f0 [112]
+                                                                                                                        17 (1.86K) 0x7fce3d6061d0 [112]
+                                                                                                                           15 (1.64K) 0x7fce3d6062b0 [112]
+                                                                                                                              13 (1.42K) 0x7fce3d606390 [112]
+                                                                                                                                 11 (1.20K) 0x7fce3d606470 [112]
+                                                                                                                                    9 (1008 bytes) 0x7fce3d606550 [112]
+                                                                                                                                       7 (784 bytes) 0x7fce3d606630 [112]
+                                                                                                                                          5 (560 bytes) 0x7fce3d606710 [112]
+                                                                                                                                             3 (336 bytes) 0x7fce3d6067f0 [112]
+                                                                                                                                                1 (112 bytes) 0x7fce3d606860 [112]
+                                                                                                                                                1 (112 bytes) 0x7fce3d6068d0 [112]
+                                                                                                                                             1 (112 bytes) 0x7fce3d606780 [112]
+                                                                                                                                          1 (112 bytes) 0x7fce3d6066a0 [112]
+                                                                                                                                       1 (112 bytes) 0x7fce3d6065c0 [112]
+                                                                                                                                    1 (112 bytes) 0x7fce3d6064e0 [112]
+                                                                                                                                 1 (112 bytes) 0x7fce3d606400 [112]
+                                                                                                                              1 (112 bytes) 0x7fce3d606320 [112]
+                                                                                                                           1 (112 bytes) 0x7fce3d606240 [112]
+                                                                                                                        1 (112 bytes) 0x7fce3d606160 [112]
+                                                                                                                     1 (112 bytes) 0x7fce3d606080 [112]
+                                                                                                                  1 (112 bytes) 0x7fce3d605fa0 [112]
+                                                                                                               1 (112 bytes) 0x7fce3d605ec0 [112]
+                                                                                                            1 (112 bytes) 0x7fce3d605de0 [112]
+                                                                                                         1 (112 bytes) 0x7fce3d605d00 [112]
+                                                                                                      1 (112 bytes) 0x7fce3d605c20 [112]
+                                                                                                   1 (112 bytes) 0x7fce3d605b40 [112]
+                                                                                                1 (112 bytes) 0x7fce3d605a60 [112]
+                                                                                             1 (112 bytes) 0x7fce3d605980 [112]
+                                                                                          1 (112 bytes) 0x7fce3d6058a0 [112]
+                                                                                       1 (112 bytes) 0x7fce3d6057c0 [112]
+                                                                                    1 (112 bytes) 0x7fce3d6056e0 [112]
+                                                                                 1 (112 bytes) 0x7fce3d605600 [112]
+                                                                              1 (112 bytes) 0x7fce3d605520 [112]
+                                                                           1 (112 bytes) 0x7fce3d605440 [112]
+                                                                        1 (112 bytes) 0x7fce3d605360 [112]
+                                                                     1 (112 bytes) 0x7fce3d605280 [112]
+                                                                  1 (112 bytes) 0x7fce3d6051a0 [112]
+                                                               1 (112 bytes) 0x7fce3d6050c0 [112]
+                                                            1 (112 bytes) 0x7fce3d604fe0 [112]
+                                                         1 (112 bytes) 0x7fce3d604f00 [112]
+                                                      1 (112 bytes) 0x7fce3d604e20 [112]
+                                                   1 (112 bytes) 0x7fce3d604d40 [112]
+                                                1 (112 bytes) 0x7fce3d604c60 [112]
+                                             1 (112 bytes) 0x7fce3d604b80 [112]
+                                          1 (112 bytes) 0x7fce3d604aa0 [112]
+                                       1 (112 bytes) 0x7fce3d6049c0 [112]
+                                    1 (112 bytes) 0x7fce3d6048e0 [112]
+                                 1 (112 bytes) 0x7fce3d604800 [112]
+                              1 (112 bytes) 0x7fce3d604720 [112]
+                           1 (112 bytes) 0x7fce3d604640 [112]
+                        1 (112 bytes) 0x7fce3d604560 [112]
+                     1 (112 bytes) 0x7fce3d604480 [112]
+                  1 (112 bytes) 0x7fce3d6043a0 [112]
+               1 (112 bytes) 0x7fce3d6042c0 [112]
+            1 (112 bytes) 0x7fce3d6041e0 [112]
+         1 (112 bytes) 0x7fce3d604100 [112]
+
+      39 (4.27K) ROOT LEAK: 0x7fce3d40e2a0 [112]
+         19 (2.08K) 0x7fce3d40e310 [112]
+            18 (1.97K) 0x7fce3d40e6f0 [112]
+               17 (1.86K) 0x7fce3d40e7d0 [112]
+                  16 (1.75K) 0x7fce3d40e8b0 [112]
+                     15 (1.64K) 0x7fce3d40e990 [112]
+                        14 (1.53K) 0x7fce3d40ea70 [112]
+                           13 (1.42K) 0x7fce3d40eb50 [112]
+                              12 (1.31K) 0x7fce3d40ec30 [112]
+                                 11 (1.20K) 0x7fce3d40ed10 [112]
+                                    10 (1.09K) 0x7fce3d40edf0 [112]
+                                       9 (1008 bytes) 0x7fce3d40eed0 [112]
+                                          8 (896 bytes) 0x7fce3d40efb0 [112]
+                                             7 (784 bytes) 0x7fce3d40f090 [112]
+                                                6 (672 bytes) 0x7fce3d40f170 [112]
+                                                   5 (560 bytes) 0x7fce3d40f250 [112]
+                                                      4 (448 bytes) 0x7fce3d40f330 [112]
+                                                         3 (336 bytes) 0x7fce3d40f410 [112]
+                                                            2 (224 bytes) 0x7fce3d40f4f0 [112]
+                                                               1 (112 bytes) 0x7fce3d40f5d0 [112]
+         19 (2.08K) 0x7fce3d40e380 [112]
+            18 (1.97K) 0x7fce3d40e760 [112]
+               17 (1.86K) 0x7fce3d40e840 [112]
+                  16 (1.75K) 0x7fce3d40e920 [112]
+                     15 (1.64K) 0x7fce3d40ea00 [112]
+                        14 (1.53K) 0x7fce3d40eae0 [112]
+                           13 (1.42K) 0x7fce3d40ebc0 [112]
+                              12 (1.31K) 0x7fce3d40eca0 [112]
+                                 11 (1.20K) 0x7fce3d40ed80 [112]
+                                    10 (1.09K) 0x7fce3d40ee60 [112]
+                                       9 (1008 bytes) 0x7fce3d40ef40 [112]
+                                          8 (896 bytes) 0x7fce3d40f020 [112]
+                                             7 (784 bytes) 0x7fce3d40f100 [112]
+                                                6 (672 bytes) 0x7fce3d40f1e0 [112]
+                                                   5 (560 bytes) 0x7fce3d40f2c0 [112]
+                                                      4 (448 bytes) 0x7fce3d40f3a0 [112]
+                                                         3 (336 bytes) 0x7fce3d40f480 [112]
+                                                            2 (224 bytes) 0x7fce3d40f560 [112]
+                                                               1 (112 bytes) 0x7fce3d40f640 [112]
+
+      37 (4.05K) ROOT LEAK: 0x7fce3d5040b0 [112]
+         35 (3.83K) 0x7fce3d504190 [112]
+            33 (3.61K) 0x7fce3d504270 [112]
+               31 (3.39K) 0x7fce3d504350 [112]
+                  29 (3.17K) 0x7fce3d504430 [112]
+                     27 (2.95K) 0x7fce3d504510 [112]
+                        25 (2.73K) 0x7fce3d5045f0 [112]
+                           23 (2.52K) 0x7fce3d5046d0 [112]
+                              21 (2.30K) 0x7fce3d5047b0 [112]
+                                 19 (2.08K) 0x7fce3d504890 [112]
+                                    17 (1.86K) 0x7fce3d504970 [112]
+                                       15 (1.64K) 0x7fce3d504a50 [112]
+                                          13 (1.42K) 0x7fce3d504b30 [112]
+                                             11 (1.20K) 0x7fce3d504c10 [112]
+                                                9 (1008 bytes) 0x7fce3d504cf0 [112]
+                                                   7 (784 bytes) 0x7fce3d504dd0 [112]
+                                                      5 (560 bytes) 0x7fce3d504eb0 [112]
+                                                         3 (336 bytes) 0x7fce3d504f90 [112]
+                                                            1 (112 bytes) 0x7fce3d505000 [112]
+                                                            1 (112 bytes) 0x7fce3d505070 [112]
+                                                         1 (112 bytes) 0x7fce3d504f20 [112]
+                                                      1 (112 bytes) 0x7fce3d504e40 [112]
+                                                   1 (112 bytes) 0x7fce3d504d60 [112]
+                                                1 (112 bytes) 0x7fce3d504c80 [112]
+                                             1 (112 bytes) 0x7fce3d504ba0 [112]
+                                          1 (112 bytes) 0x7fce3d504ac0 [112]
+                                       1 (112 bytes) 0x7fce3d5049e0 [112]
+                                    1 (112 bytes) 0x7fce3d504900 [112]
+                                 1 (112 bytes) 0x7fce3d504820 [112]
+                              1 (112 bytes) 0x7fce3d504740 [112]
+                           1 (112 bytes) 0x7fce3d504660 [112]
+                        1 (112 bytes) 0x7fce3d504580 [112]
+                     1 (112 bytes) 0x7fce3d5044a0 [112]
+                  1 (112 bytes) 0x7fce3d5043c0 [112]
+               1 (112 bytes) 0x7fce3d5042e0 [112]
+            1 (112 bytes) 0x7fce3d504200 [112]
+         1 (112 bytes) 0x7fce3d504120 [112]
+

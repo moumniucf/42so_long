@@ -6,61 +6,61 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 15:06:32 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/07 16:50:59 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/08 12:11:17 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
-int len_x(char *map)
-{
-	if(!map)
-		exit(0);
-	int x = 0;
-	while(map[x] && map[x] != '\n')
-	{
-		x++;
-	}
-	return(x);
-}
+// int len_x(char *map)
+// {
+// 	if(!map)
+// 		exit(0);
+// 	int x = 0;
+// 	while(map[x] && map[x] != '\n')
+// 	{
+// 		x++;
+// 	}
+// 	return(x);
+// }
 
-int len_y(char **map)
-{
-	if(!map)
-		return (0);
-	int y = 0;
-	while(map[y])
-	{
-		y++;
-	}
-	return (y);
-}
+// int len_y(char **map)
+// {
+// 	if(!map)
+// 		return (0);
+// 	int y = 0;
+// 	while(map[y])
+// 	{
+// 		y++;
+// 	}
+// 	return (y);
+// }
 
-int	count_c(char **map)
-{
-	int	i;
-	int	j;
-	int	c;
+// int	count_c(char **map)
+// {
+// 	int	i;
+// 	int	j;
+// 	int	c;
 
-	if (!map)
-		return (0);
-	c = 0;
-	i = 0;
-	while (map[i])
-	{
-		j = 0;
-		while (map[i][j])
-		{
-			if (map[i][j] == 'C')
-			{
-				c++;
-			}
-			j++;
-		}
-		i++;
-	}
-	return (c);
-}
+// 	if (!map)
+// 		return (0);
+// 	c = 0;
+// 	i = 0;
+// 	while (map[i])
+// 	{
+// 		j = 0;
+// 		while (map[i][j])
+// 		{
+// 			if (map[i][j] == 'C')
+// 			{
+// 				c++;
+// 			}
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	return (c);
+// }
 
 void	find_pl(t_game *game)
 {
@@ -90,9 +90,9 @@ void flood_fill(char **map_c, int x, int y, t_game *game, int *cl, int *exit)
     if (map_c[y][x] == 'E')
         *exit = 1;
     if (map_c[y][x] == 'C')
-        (*cl)++;
-    if (map_c[y][x] == '1' || map_c[y][x] == 'V')
-        return;
+        (*cl)--;
+    if (map_c[y][x] == '1' || map_c[y][x] == 'V' || map_c[y][x] == 'E')
+        return ;
     map_c[y][x] = 'V';
     flood_fill(map_c, x + 1, y, game, cl, exit);
     flood_fill(map_c, x - 1, y, game, cl, exit);
@@ -110,6 +110,8 @@ int valid_path(t_game *game)
     int ext;
 	find_pl(game);
     char **map_c = malloc(sizeof(char *) * (game->height + 1));
+	if(!map_c)
+		return (0);
     int i = 0;
     while (i < game->height)
     {
@@ -118,39 +120,49 @@ int valid_path(t_game *game)
     }
     map_c[i] = NULL;
     flood_fill(map_c, game->p_x, game->p_y, game, &cl, &ext);
+	i = 0;
+	while(i < game->height)
+	{
+		free(map_c[i]);
+		i++;
+	}
+	free(map_c[i]);
     return (cl == 0 && ext == 1);
 }
+// void	leaks()
+// {
+// 	system("leaks a.out");
+// }
+// int main()
+// {
+// 	atexit(leaks);
+//     t_game *game = malloc(sizeof(t_game));
 
-int main()
-{
-    t_game *game = malloc(sizeof(t_game));
 
+//     char *map[] = {
+//     "1111111111111",
+//     "1000001000001",
+//     "10P00000C0001",
+//     "1000C00100C01",
+//     "10000C0000001",
+//     "1000000000C01",
+//     "11111111E1111",
+//     "1000CC0000001",
+//     "1000000C10101",
+//     "10001C1000001",
+//     "111C011010001",
+//     "1C00C00100001",
+//     "1111111111111",
+//     NULL
+// };
 
-    char *map[] = {
-    "1111111111111",
-    "1000001000001",
-    "10P00000C0E01",
-    "1000C00100001",
-    "10000C0000001",
-    "1000000000C01",
-    "1111111101111",
-    "1000CC0000001",
-    "1000000C10101",
-    "10000C0000001",
-    "100C000000001",
-    "1000000C00001",
-    "1111111111111",
-    NULL
-};
+//     game->map = map;
 
-    game->map = map;
-
-    if (valid_path(game))
-        printf("Valid path exists and all collectibles were collected!\n");
-    else
-        printf("No valid path or some collectibles are missing.\n");
-
-    free(game);
-    return 0;
-}
+//     if (!valid_path(game))
+//         printf("No valid path or some collectibles are missing.\n");
+//     else
+//         printf("Valid path exists and all collectibles were collected!\n");
+// 	free(game);
+// 	return(0);
+// }
 
