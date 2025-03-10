@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 12:30:13 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/08 14:04:02 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/10 16:04:51 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ void	free_map(char **map)
 {
 	int	i;
 
-	if(!map)
+	if (!map)
 		return ;
 	i = 0;
-	while(map[i])
+	while (map[i])
 	{
 		free(map[i]);
 		i++;

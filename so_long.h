@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/08 14:02:05 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/10 16:07:25 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ typedef struct s_game
 # define KEY_EXIT 17
 
 char	**reading_map(char *file);
-void move_p(t_game *game, int x, int y);
-void	apply_map(void *mlx, void *win, int x, int y, char **map, t_game *game);
+void	move_p(t_game *game, int x, int y);
+void	apply_map(int x, int y, char **map, t_game *game);
 int		len_y(char **map);
 int		len_x(char *map);
 int		prees_esc(int keycode, t_game *game);
@@ -68,8 +68,11 @@ int		valid_extention(char *file);
 void	flood_fill(char **map_c, int x, int y, t_game *game, int *cl, int *exit);
 int		valid_chars2(char c);
 int		valid_path(t_game *game);
-void	so2_parss(char **map, t_game *game);
+void	so2_parss(t_game *game);
 int		ft_strlen(char *s);
 void	find_pl(t_game *game);
 void	free_map(char **map);
+void	appcle(t_game *game);
+void	you_win(t_game *game, int x, int y);
+void	free_img(t_game *game, void *img);
 #endif

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:15:44 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/08 16:01:12 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/10 14:35:48 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	so_parss(char **map, t_game *game)
 
 	if(!map)
 	{
-		ft_printf("Error\n");
+		ft_printf("Error33\n");
 		exit(1);
 	}
 	size = ft_strlen(*map) - 1;
@@ -87,27 +87,27 @@ void	so_parss(char **map, t_game *game)
 		{
 			if (count_c(map) == 0)
 			{
-				ft_printf("Error\n");
+				ft_printf("Error1\n");
 				exit(1);
 			}
 			else if (count_e(map) != 1 || count_p(map) != 1)
 			{
-				ft_printf("Error\n");
+				ft_printf("Error2\n");
 				exit(1);
 			}
 			else if (size != len_x(map[i]))
 			{
-				ft_printf("Error\n");
+				ft_printf("Error3\n");
 				exit(1);
 			}
 			else if (!invalid_map(game))
 			{
-				ft_printf("Error\n");
+				ft_printf("Error4\n");
 				exit(1);
 			}
 			else if (!valid_chars2(game->map[i][j]))
 			{
-				ft_printf("Error\n");
+				ft_printf("Error5\n");
 				exit(1);
 			}
 			j++;

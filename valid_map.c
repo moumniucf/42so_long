@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/08 15:12:33 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/10 16:01:04 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,25 @@ int	len_y(char **map)
 	return (y);
 }
 
+int	get_heigth(char *line)
+{
+	int	len;
+	int	fd;
+
+	fd = open(line, O_RDONLY);
+	if (fd == -1)
+		return (0);
+	line = get_next_line(fd);
+	len = 0;
+	while (line)
+	{
+		len++;
+		free(line);
+		line = get_next_line(fd);
+	}
+	return (len);
+}
+
 char	**reading_map(char *file)
 {
 	int		fd;
@@ -48,26 +67,13 @@ char	**reading_map(char *file)
 	char	**map;
 	int		i;
 
+	height = get_heigth(file);
 	fd = open(file, O_RDONLY);
-	if(fd == -1)
-		return (NULL);
-	line = get_next_line(fd);
-	height = 0;
-	while (line)
-	{
-		height++;
-		free(line);
-		line = get_next_line(fd);
-	}
-	fd = open(file, O_RDONLY);
-	if(fd == -1)
+	if (fd == -1)
 		return (NULL);
 	map = malloc((height + 1) * sizeof(char *));
-	if(!map)
-	{
-		return (free(map), NULL);
-		close(fd);
-	}
+	if (!map)
+		return (NULL);
 	i = 0;
 	line = get_next_line(fd);
 	while (line)
@@ -81,7 +87,7 @@ char	**reading_map(char *file)
 	return (map);
 }
 
-void	apply_map(void	*mlx, void *win, int x, int y, char **map, t_game *game)
+void	apply_map(int x, int y, char **map, t_game *game)
 {
 	void	*img;
 	void	*img1;
@@ -93,8 +99,6 @@ void	apply_map(void	*mlx, void *win, int x, int y, char **map, t_game *game)
 	int		i;
 	int		j;
 
-	(void)mlx;
-	(void)win;
 	img = mlx_xpm_file_to_image(game->mlx, "hayt.xpm", &img_w, &img_h);
 	img1 = mlx_xpm_file_to_image(game->mlx, "e.xpm", &img_w, &img_h);
 	img2 = mlx_xpm_file_to_image(game->mlx, "sb.xpm", &img_w, &img_h);
@@ -134,4 +138,9 @@ void	apply_map(void	*mlx, void *win, int x, int y, char **map, t_game *game)
 		}
 		i++;
 	}
+	mlx_destroy_image(game->mlx, img);
+	mlx_destroy_image(game->mlx, img1);
+	mlx_destroy_image(game->mlx, img2);
+	mlx_destroy_image(game->mlx, img3);
+	mlx_destroy_image(game->mlx, img4);
 }
