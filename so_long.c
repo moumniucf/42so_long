@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/10 16:10:47 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/10 16:35:24 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	leaks(){
 }
 int	main(int ac, char **av)
 {
-	atexit(leaks);
-	t_game	*game;
+	// atexit(leaks);
+	t_game	*game = NULL;
 
 	if (ac != 2)
 		return (0);
@@ -58,6 +58,9 @@ int	main(int ac, char **av)
 	mlx_hook(game->win, KEY_EXIT, 0, press_x, game);
 	mlx_loop(game->mlx);
 	mlx_destroy_window(game->mlx, game->win);
+	free(game->mlx);
 	free(game->win);
+	free(game);
+	free(game->map);
 	return (0);
 }

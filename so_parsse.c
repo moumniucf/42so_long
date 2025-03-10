@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:15:44 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/10 14:35:48 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/10 16:36:19 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	so_parss(char **map, t_game *game)
 
 	if(!map)
 	{
-		ft_printf("Error33\n");
+		ft_printf("Error\n");
 		exit(1);
 	}
 	size = ft_strlen(*map) - 1;
