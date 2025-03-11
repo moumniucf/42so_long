@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/10 16:35:24 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/11 13:27:33 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	leaks(){
 }
 int	main(int ac, char **av)
 {
-	// atexit(leaks);
+	atexit(leaks);
 	t_game	*game = NULL;
 
 	if (ac != 2)
@@ -39,16 +39,14 @@ int	main(int ac, char **av)
 	(void)ac;
 	game = malloc(sizeof(t_game));
 	game->map = reading_map(av[1]);
-	if (!valid_extention(av[1]))
+	so_parss(game->map, game);
+	if (!valid_extention(av[1]) || !valid_path(game))
 	{
 		ft_printf("Error\n");
 		exit(1);
 	}
-	so_parss(game->map, game);
-	so2_parss(game);
 	game->x = len_x(*game->map);
 	game->y = len_y(game->map);
-	ft_printf("--->%d\n", game->y * game->x);
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(game->mlx, game->x * 32, game->y * 32, "./so_long");
 	game->mvmt = 0;
