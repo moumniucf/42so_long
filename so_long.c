@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/11 13:27:33 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/11 15:46:06 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,14 @@ int	move_player(int keycode, t_game *game)
 		prees_esc(keycode, game);
 	return (0);
 }
-void	leaks(){
-	system("leaks so_long");
-}
+
 int	main(int ac, char **av)
 {
-	atexit(leaks);
-	t_game	*game = NULL;
+	t_game	*game ;
 
-	if (ac != 2)
-		return (0);
-	(void)ac;
 	game = malloc(sizeof(t_game));
+	if (ac != 2 || !game)
+		return (0);
 	game->map = reading_map(av[1]);
 	so_parss(game->map, game);
 	if (!valid_extention(av[1]) || !valid_path(game))
@@ -51,14 +47,9 @@ int	main(int ac, char **av)
 	game->win = mlx_new_window(game->mlx, game->x * 32, game->y * 32, "./so_long");
 	game->mvmt = 0;
 	game->clct = 0;
-	apply_map(32, 32, game->map, game);
+	apply_map(32, 32, game);
 	mlx_key_hook(game->win, move_player, game);
 	mlx_hook(game->win, KEY_EXIT, 0, press_x, game);
 	mlx_loop(game->mlx);
-	mlx_destroy_window(game->mlx, game->win);
-	free(game->mlx);
-	free(game->win);
-	free(game);
-	free(game->map);
 	return (0);
 }

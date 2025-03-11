@@ -6,35 +6,34 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 14:42:45 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/08 14:44:18 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/11 16:13:44 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	so2_parss(char **map, t_game *game)
+void	appcle(t_game *game)
 {
-	int	i;
-	int	j;
+	mlx_clear_window(game->mlx, game->win);
+	apply_map(32, 32, game);
+}
 
-	game->map = map;
-	game->px = 1;
-    game->py = 1;
+void	you_win(t_game *game, int x, int y)
+{
+	if (game->map[x][y] == 'E' && count_c(game->map) == 0)
+	{
+		ft_printf("\e[1;34m Game Over\e[0m\n");
+		exit(0);
+	}
+	if (game->map[x][y] == 'H')
+	{
+		ft_printf("\x1b[31mU Lose\n\x1b[0m");
+		exit(1);
+	}
+}
+
+void	line_map(t_game *game)
+{
 	game->height = len_x(*game->map);
 	game->width = len_y(game->map);
-	i = 0;
-	while (i < game->height)
-	{
-		j = 0;
-		while (j < game->width)
-		{
-			if (!valid_path(game))
-			{
-				ft_printf("Error P\n");
-				exit(1);
-			}
-			j++;
-		}
-		i++;
-	}
 }

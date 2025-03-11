@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:37:43 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/11 13:26:58 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/11 15:06:06 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	appcle(t_game *game)
 {
 	mlx_clear_window(game->mlx, game->win);
-	apply_map(32, 32, game->map, game);
+	apply_map(32, 32, game);
 }
 
 void	you_win(t_game *game, int x, int y)
@@ -24,5 +24,27 @@ void	you_win(t_game *game, int x, int y)
 	{
 		ft_printf("\e[1;34m Game Over\e[0m\n");
 		exit(0);
+	}
+}
+
+void	find_player(t_game *game)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < game->height)
+	{
+		j = 0;
+		while (j < game->width)
+		{
+			if (game->map[i][j] == 'P')
+			{
+				game->p_x = j;
+				game->p_y = i;
+			}
+			i++;
+		}
+		j++;
 	}
 }

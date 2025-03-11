@@ -1,26 +1,82 @@
-Error
-Process:         so_long [75941]
+Moves: 1
+Moves: 2
+Moves: 3
+Moves: 4
+Moves: 5
+Moves: 6
+Moves: 7
+Moves: 8
+Moves: 9
+Moves: 10
+Moves: 11
+Moves: 12
+Moves: 13
+Moves: 14
+Moves: 15
+Moves: 16
+Moves: 17
+Moves: 18
+Moves: 19
+Moves: 20
+Moves: 21
+Moves: 22
+Moves: 23
+Moves: 24
+Moves: 25
+Moves: 26
+Moves: 27
+Moves: 28
+Moves: 29
+Moves: 30
+Moves: 31
+Moves: 32
+Moves: 33
+Moves: 34
+Moves: 35
+Moves: 36
+Moves: 37
+Moves: 38
+Moves: 39
+Moves: 40
+Moves: 41
+Moves: 42
+Moves: 43
+Moves: 44
+Moves: 45
+Moves: 46
+Moves: 47
+Moves: 48
+Moves: 49
+Moves: 50
+Moves: 51
+Moves: 52
+Moves: 53
+Moves: 54
+Moves: 55
+Moves: 56
+Moves: 57
+Moves: 58
+[1;34m Game Over[0m
+Process:         so_long [94715]
 Path:            /Volumes/VOLUME/*/so_long
-Load Address:    0x10018d000
+Load Address:    0x103fe8000
 Identifier:      so_long
 Version:         ???
 Code Type:       X86-64
 Parent Process:  zsh [30017]
 
-Date/Time:       2025-03-11 13:27:00.935 +0000
-Launch Time:     2025-03-11 13:27:00.416 +0000
+Date/Time:       2025-03-11 15:06:21.511 +0000
+Launch Time:     2025-03-11 15:06:10.451 +0000
 OS Version:      Mac OS X 10.15.7 (19H2026)
 Report Version:  7
 Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
 Analysis Tool Version:  Xcode 12.4 (12D4e)
 
-Physical footprint:         708K
-Physical footprint (peak):  708K
+Physical footprint:         27.0M
+Physical footprint (peak):  27.0M
 ----
 
 leaks Report Version: 4.0
-Process 75941: 724 nodes malloced for 53 KB
-Process 75941: 1 leak for 112 total leaked bytes.
-
-    1 (112 bytes) ROOT LEAK: 0x7f8e71c0e2c0 [112]
+Process 94715: 25765 nodes malloced for 13274 KB
+Process 94715: 0 leaks for 0 total leaked bytes.
 

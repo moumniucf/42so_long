@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/10 16:07:25 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/11 15:06:08 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct s_game
 
 char	**reading_map(char *file);
 void	move_p(t_game *game, int x, int y);
-void	apply_map(int x, int y, char **map, t_game *game);
+void	apply_map(int x, int y, t_game *game);
 int		len_y(char **map);
 int		len_x(char *map);
 int		prees_esc(int keycode, t_game *game);
@@ -75,4 +75,7 @@ void	free_map(char **map);
 void	appcle(t_game *game);
 void	you_win(t_game *game, int x, int y);
 void	free_img(t_game *game, void *img);
+void	find_player(t_game *game);
+void	get_error(void);
+void	line_map(t_game *game);
 #endif

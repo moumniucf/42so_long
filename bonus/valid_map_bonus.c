@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:05:54 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/07 14:59:10 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/11 16:15:48 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,40 @@ int	len_y(char **map)
 	return (y);
 }
 
-char	**reading_map(char *file)
+int	get_heigth(char *line)
 {
-	char	**map;
-	int		fd;
-	int		height = 0;
-	char	*line;
-	int		i;
+	int	len;
+	int	fd;
 
-	fd = open(file, O_RDONLY);
+	fd = open(line, O_RDONLY);
+	if (fd == -1)
+		return (0);
 	line = get_next_line(fd);
+	len = 0;
 	while (line)
 	{
-		height++;
+		len++;
 		free(line);
 		line = get_next_line(fd);
 	}
-	close(fd);
+	return (len);
+}
+
+char	**reading_map(char *file)
+{
+	int		fd;
+	int		height;
+	char	*line;
+	char	**map;
+	int		i;
+
+	height = get_heigth(file);
 	fd = open(file, O_RDONLY);
+	if (fd == -1)
+		return (NULL);
 	map = malloc((height + 1) * sizeof(char *));
+	if (!map)
+		return (NULL);
 	i = 0;
 	line = get_next_line(fd);
 	while (line)
@@ -68,10 +83,11 @@ char	**reading_map(char *file)
 		i++;
 	}
 	map[i] = NULL;
+	close (fd);
 	return (map);
 }
 
-void	apply_map(void *mlx, void *win, int x, int y, char **map, t_game *game)
+void	apply_map(int x, int y, t_game *game)
 {
 	void	*img;
 	void	*img1;
@@ -83,10 +99,6 @@ void	apply_map(void *mlx, void *win, int x, int y, char **map, t_game *game)
 	int		i;
 	int		j;
 
-	(void)mlx;
-	(void)win;
-	(void)map;
-	aplly_images(game);
 	img = mlx_xpm_file_to_image(game->mlx, "hayt.xpm", &img_w, &img_h);
 	img1 = mlx_xpm_file_to_image(game->mlx, "e.xpm", &img_w, &img_h);
 	img2 = mlx_xpm_file_to_image(game->mlx, "sb.xpm", &img_w, &img_h);

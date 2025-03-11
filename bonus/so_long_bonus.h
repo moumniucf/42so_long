@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/08 14:46:25 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/11 16:17:23 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,10 @@ typedef struct s_game
 # define KEY_S 1
 # define KEY_D 2
 # define KEY_EXIT 17
+# define WH 0xFFFFFF
 
 char	**reading_map(char *file);
-void	apply_map(void *mlx, void *win, int x, int y, char **map, t_game *game);
+void	apply_map(int x, int y, t_game *game);
 int		len_y(char **map);
 int		len_x(char *map);
 int		prees_esc(int keycode, t_game *game);
@@ -67,14 +68,20 @@ int		count_p(char **map);
 int		count_e(char **map);
 int		invalid_map(t_game *game);
 int		valid_extention(char *file);
-void flood_fill(char **map_c, int x, int y, t_game *game, int *cl, int *exit);
+void	flood_fill(char **map_c, int x, int y, t_game *game, int *cl, int *exit);
 int		valid_chars2(char c);
-int valid_path(t_game *game);
+int		valid_path(t_game *game);
 char	*ft_itoa(int n);
 int		animation(t_game *game);
 int		all_animations(t_game *game);
 void	aplly_images(t_game *game);
 char	*ft_strdup(char *s1);
 void	find_pl(t_game *game);
-void	so2_parss(char **map, t_game *game);
+void	appcle(t_game *game);
+void	you_win(t_game *game, int x, int y);
+void	invalid2(char **map);
+void	get_error2(void);
+void	line_map(t_game *game);
+void	free_map(char **map);
+int		get_heigth(char *line);
 #endif

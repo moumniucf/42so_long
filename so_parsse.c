@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:15:44 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/10 16:36:19 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/11 14:27:25 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,20 +65,21 @@ int	valid_extention(char *file)
 	return (1);
 }
 
+void	invalid_map2(char **map)
+{
+	if (!map)
+	{
+		get_error();
+	}
+}
+
 void	so_parss(char **map, t_game *game)
 {
 	int	i;
 	int	j;
-	int	size;
 
-	if(!map)
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}
-	size = ft_strlen(*map) - 1;
-	game->height = len_x(*game->map);
-	game->width = len_y(game->map);
+	invalid_map2(map);
+	line_map(game);
 	i = 0;
 	while (i < game->width)
 	{
@@ -86,30 +87,15 @@ void	so_parss(char **map, t_game *game)
 		while (j < game->height)
 		{
 			if (count_c(map) == 0)
-			{
-				ft_printf("Error1\n");
-				exit(1);
-			}
+				get_error();
 			else if (count_e(map) != 1 || count_p(map) != 1)
-			{
-				ft_printf("Error2\n");
-				exit(1);
-			}
-			else if (size != len_x(map[i]))
-			{
-				ft_printf("Error3\n");
-				exit(1);
-			}
+				get_error();
+			else if (len_x(map[0]) != len_x(map[i]))
+				get_error();
 			else if (!invalid_map(game))
-			{
-				ft_printf("Error4\n");
-				exit(1);
-			}
+				get_error();
 			else if (!valid_chars2(game->map[i][j]))
-			{
-				ft_printf("Error5\n");
-				exit(1);
-			}
+				get_error();
 			j++;
 		}
 		i++;
