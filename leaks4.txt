@@ -56,27 +56,56 @@ Moves: 55
 Moves: 56
 Moves: 57
 Moves: 58
+Moves: 59
+Moves: 60
+Moves: 61
+Moves: 62
+Moves: 63
+Moves: 64
+Moves: 65
+Moves: 66
+Moves: 67
+Moves: 68
+Moves: 69
+Moves: 70
+Moves: 71
+Moves: 72
+Moves: 73
+Moves: 74
+Moves: 75
+Moves: 76
+Moves: 77
+Moves: 78
+Moves: 79
+Moves: 80
+Moves: 81
+Moves: 82
+Moves: 83
+Moves: 84
+Moves: 85
+Moves: 86
+Moves: 87
+Moves: 88
+Moves: 89
+Moves: 90
+Moves: 91
+Moves: 92
+Moves: 93
+Moves: 94
+Moves: 95
+Moves: 96
+Moves: 97
+Moves: 98
+Moves: 99
+Moves: 100
+Moves: 101
+Moves: 102
+Moves: 103
+Moves: 104
+Moves: 105
+Moves: 106
+Moves: 107
+Moves: 108
+Moves: 109
+Moves: 110
 [1;34m Game Over[0m
-Process:         so_long [94715]
-Path:            /Volumes/VOLUME/*/so_long
-Load Address:    0x103fe8000
-Identifier:      so_long
-Version:         ???
-Code Type:       X86-64
-Parent Process:  zsh [30017]
-
-Date/Time:       2025-03-11 15:06:21.511 +0000
-Launch Time:     2025-03-11 15:06:10.451 +0000
-OS Version:      Mac OS X 10.15.7 (19H2026)
-Report Version:  7
-Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
-Analysis Tool Version:  Xcode 12.4 (12D4e)
-
-Physical footprint:         27.0M
-Physical footprint (peak):  27.0M
-----
-
-leaks Report Version: 4.0
-Process 94715: 25765 nodes malloced for 13274 KB
-Process 94715: 0 leaks for 0 total leaked bytes.
-

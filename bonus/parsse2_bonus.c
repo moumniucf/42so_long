@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 14:42:45 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/11 16:13:44 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:38:47 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	appcle(t_game *game)
 {
-	mlx_clear_window(game->mlx, game->win);
 	apply_map(32, 32, game);
 }
 
@@ -36,4 +35,13 @@ void	line_map(t_game *game)
 {
 	game->height = len_x(*game->map);
 	game->width = len_y(game->map);
+}
+
+void	invalid_m(t_game *game)
+{
+	if(!valid_path(game))
+	{
+		ft_printf("Error\n");
+		exit(1);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/11 15:46:06 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:43:03 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int	main(int ac, char **av)
 		return (0);
 	game->map = reading_map(av[1]);
 	so_parss(game->map, game);
-	if (!valid_extention(av[1]) || !valid_path(game))
+	inva_lid(game);
+	if (!valid_extention(av[1]))
 	{
 		ft_printf("Error\n");
 		exit(1);
@@ -48,7 +49,7 @@ int	main(int ac, char **av)
 	game->mvmt = 0;
 	game->clct = 0;
 	apply_map(32, 32, game);
-	mlx_key_hook(game->win, move_player, game);
+	mlx_hook(game->win, 2, 0, move_player, game);
 	mlx_hook(game->win, KEY_EXIT, 0, press_x, game);
 	mlx_loop(game->mlx);
 	return (0);

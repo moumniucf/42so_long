@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:37:43 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/11 15:06:06 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:50:18 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	appcle(t_game *game)
 {
-	mlx_clear_window(game->mlx, game->win);
 	apply_map(32, 32, game);
 }
 
@@ -46,5 +45,14 @@ void	find_player(t_game *game)
 			i++;
 		}
 		j++;
+	}
+}
+
+void	inva_lid(t_game *game)
+{
+	if (!valid_path(game))
+	{
+		ft_printf("Error\n");
+		exit(1);
 	}
 }

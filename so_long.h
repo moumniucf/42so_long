@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/11 15:06:08 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:13:38 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,5 @@ void	free_img(t_game *game, void *img);
 void	find_player(t_game *game);
 void	get_error(void);
 void	line_map(t_game *game);
+void	inva_lid(t_game *game);
 #endif
