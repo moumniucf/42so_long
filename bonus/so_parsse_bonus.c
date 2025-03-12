@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:01:38 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/11 16:04:22 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 12:13:30 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ void	so_parss_b(char **map, t_game *game)
 			else if (!invalid_map(game))
 				get_error2();
 			else if (!valid_chars2(game->map[i][j]))
+				get_error2();
+			else if(!count_h(map))
 				get_error2();
 			j++;
 		}

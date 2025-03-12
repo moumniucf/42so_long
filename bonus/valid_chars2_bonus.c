@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:05:21 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/11 16:14:18 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 12:15:17 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,30 @@ void	free_map(char **map)
 		i++;
 	}
 	free(map);
+}
+
+int	count_h(char **map)
+{
+	int	i;
+	int	j;
+	int	c;
+
+	if (!map)
+		return (0);
+	i = 0;
+	c = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] == 'H')
+			{
+				c++;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (c);
 }

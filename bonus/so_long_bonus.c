@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/12 11:11:49 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 12:14:26 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	move_player(int keycode, t_game *game)
 int	main(int ac, char **av)
 {
 	t_game	*game ;
-
 	game = malloc(sizeof(t_game));
 	if (ac != 2 || !game)
 		return (0);

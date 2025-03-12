@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 12:30:13 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/10 16:04:51 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 11:33:52 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,28 @@ void	free_map(char **map)
 		i++;
 	}
 	free(map);
+}
+void	app_3(t_game *game, int x, int y)
+{
+	int i;
+	int j;
+	int nx;
+	int ny;
+	i = 0;
+	while(i < game->height)
+	{
+		j = 0;
+		while(j < game->width)
+		{
+			nx = i + x;
+			ny = j + y;
+			if (game->map[nx][ny] != '1' && game->map[nx][ny] != 'E')
+				{
+					game->map[nx][ny] = 'P';
+					game->map[i][j] = '0';
+					game->mvmt++;
+					ft_printf("Moves: %d\n", game->mvmt);
+				}
+		}
+	}
 }
