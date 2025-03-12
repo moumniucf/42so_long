@@ -6,39 +6,11 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/11 15:05:51 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 15:24:43 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int	len_x(char *map)
-{
-	int	x;
-
-	if (!map)
-		return (0);
-	x = 0;
-	while (map[x] && map[x] != '\n')
-	{
-		x++;
-	}
-	return (x);
-}
-
-int	len_y(char **map)
-{
-	int	y;
-
-	if (!map)
-		return (0);
-	y = 0;
-	while (map[y])
-	{
-		y++;
-	}
-	return (y);
-}
 
 int	get_heigth(char *line)
 {
@@ -87,25 +59,30 @@ char	**reading_map(char *file)
 	return (map);
 }
 
-void	apply_map(int x, int y, t_game *game)
+void	ima_ges(int i, int j, t_game *game)
 {
-	void	*img;
-	void	*img1;
-	void	*img2;
-	void	*img3;
-	void	*img4;
-	int		i;
-	int		j;
-
-	img = mlx_xpm_file_to_image(game->mlx, "hayt.xpm", &i, &j);
-	img1 = mlx_xpm_file_to_image(game->mlx, "e.xpm", &i, &j);
-	img2 = mlx_xpm_file_to_image(game->mlx, "sb.xpm", &i, &j);
-	img3 = mlx_xpm_file_to_image(game->mlx, "b.xpm", &i, &j);
-	img4 = mlx_xpm_file_to_image(game->mlx, "coin.xpm", &i, &j);
-	if (!img || !img1 || !img2 || !img3 || !img4)
+	game->img = mlx_xpm_file_to_image(game->mlx, "hayt.xpm", &i, &j);
+	game->img1 = mlx_xpm_file_to_image(game->mlx, "e.xpm", &i, &j);
+	game->img2 = mlx_xpm_file_to_image(game->mlx, "sb.xpm", &i, &j);
+	game->img3 = mlx_xpm_file_to_image(game->mlx, "b.xpm", &i, &j);
+	game->img4 = mlx_xpm_file_to_image(game->mlx, "coin.xpm", &i, &j);
+	if (!game->img || !game->img1 || !game->img2 || !game->img3 || !game->img4)
 	{
 		exit(1);
 	}
+}
+
+void	a_i(int i, int j, void *imag, t_game *game)
+{
+	mlx_put_image_to_window(game->mlx, game->win, imag, i, j);
+}
+
+void	apply_map(int x, int y, t_game *game)
+{
+	int		i;
+	int		j;
+
+	ima_ges(x, y, game);
 	i = 0;
 	while (game->map[i])
 	{
@@ -113,25 +90,15 @@ void	apply_map(int x, int y, t_game *game)
 		while (game->map[i][j])
 		{
 			if (game->map[i][j] == '1')
-			{
-				mlx_put_image_to_window(game->mlx, game->win, img, j * x, i * y);
-			}
+				a_i(j * x, i * y, game->img, game);
 			else if (game->map[i][j] == 'E')
-			{
-				mlx_put_image_to_window(game->mlx, game->win, img1, j * x, i * y);
-			}
+				a_i(j * x, i * y, game->img1, game);
 			else if (game->map[i][j] == 'P')
-			{
-				mlx_put_image_to_window(game->mlx, game->win, img2, j * x, i * y);
-			}
+				a_i(j * x, i * y, game->img2, game);
 			else if (game->map[i][j] == '0')
-			{
-				mlx_put_image_to_window(game->mlx, game->win, img3, j * x, i * y);
-			}
+				a_i(j * x, i * y, game->img3, game);
 			else if (game->map[i][j] == 'C')
-			{
-				mlx_put_image_to_window(game->mlx, game->win, img4, j * x, i * y);
-			}
+				a_i(j * x, i * y, game->img4, game);
 			j++;
 		}
 		i++;

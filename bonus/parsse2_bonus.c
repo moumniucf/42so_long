@@ -6,16 +6,11 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 14:42:45 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/12 10:38:47 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 15:10:45 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-
-void	appcle(t_game *game)
-{
-	apply_map(32, 32, game);
-}
 
 void	you_win(t_game *game, int x, int y)
 {
@@ -39,9 +34,37 @@ void	line_map(t_game *game)
 
 void	invalid_m(t_game *game)
 {
-	if(!valid_path(game))
+	if (!valid_path(game))
 	{
 		ft_printf("Error\n");
 		exit(1);
 	}
+}
+
+int	len_x(char *map)
+{
+	int	x;
+
+	if (!map)
+		return (0);
+	x = 0;
+	while (map[x] && map[x] != '\n')
+	{
+		x++;
+	}
+	return (x);
+}
+
+int	len_y(char **map)
+{
+	int	y;
+
+	if (!map)
+		return (0);
+	y = 0;
+	while (map[y])
+	{
+		y++;
+	}
+	return (y);
 }

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 14:34:13 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/11 15:07:35 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 15:24:12 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,32 @@ void	get_error(void)
 {
 	ft_printf("Error\n");
 	exit(1);
+}
+
+int	len_x(char *map)
+{
+	int	x;
+
+	if (!map)
+		return (0);
+	x = 0;
+	while (map[x] && map[x] != '\n')
+	{
+		x++;
+	}
+	return (x);
+}
+
+int	len_y(char **map)
+{
+	int	y;
+
+	if (!map)
+		return (0);
+	y = 0;
+	while (map[y])
+	{
+		y++;
+	}
+	return (y);
 }

@@ -6,11 +6,20 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/12 12:14:26 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 14:55:46 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
+
+void	inva_ex(char *file)
+{
+	if (!valid_extention(file))
+	{
+		ft_printf("Error\n");
+		exit(1);
+	}
+}
 
 int	move_player(int keycode, t_game *game)
 {
@@ -30,21 +39,19 @@ int	move_player(int keycode, t_game *game)
 int	main(int ac, char **av)
 {
 	t_game	*game ;
+
 	game = malloc(sizeof(t_game));
 	if (ac != 2 || !game)
 		return (0);
 	game->map = reading_map(av[1]);
+	inva_ex(av[1]);
 	so_parss_b(game->map, game);
 	invalid_m(game);
-	if (!valid_extention(av[1]))
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}
 	game->x = len_x(*game->map);
 	game->y = len_y(game->map);
 	game->mlx = mlx_init();
-	game->win = mlx_new_window(game->mlx, game->x * 32, game->y * 32, "./so_long");
+	game->win = mlx_new_window(game->mlx, game->x * 32,
+			game->y * 32, "./so_long");
 	game->mvmt = 0;
 	game->clct = 0;
 	game->fr = 0;
@@ -53,5 +60,4 @@ int	main(int ac, char **av)
 	mlx_hook(game->win, KEY_EXIT, 0, press_x, game);
 	mlx_loop_hook(game->mlx, all_animations, game);
 	mlx_loop(game->mlx);
-	return (0);
 }

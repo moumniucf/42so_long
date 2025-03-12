@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 15:50:02 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/12 11:24:02 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 15:02:54 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	animation(t_game *game)
 {
 	static int	frame_count = 0;
 
-	if (frame_count % 20 == 0)
+	if (frame_count % 25 == 0)
 	{
 		game->fr = (game->fr + 1) % 4;
 	}
@@ -52,7 +52,8 @@ int	all_animations(t_game *game)
 		{
 			if (game->map[i][j] == 'C')
 			{
-				mlx_put_image_to_window(game->mlx, game->win, game->img[game->fr], j * 32, i * 32);
+				mlx_put_image_to_window(game->mlx, game->win,
+					game->img[game->fr], j * 32, i * 32);
 			}
 			j++;
 		}

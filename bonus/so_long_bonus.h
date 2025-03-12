@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/12 12:13:01 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 15:03:30 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ typedef struct s_game
 	int		mvmt;
 	int		clct;
 	int		*ex_it;
+	void	*imag;
+	void	*imag1;
+	void	*imag2;
+	void	*imag3;
+	void	*imag4;
 	char	*img[4];
 }		t_game;
 
@@ -68,7 +73,8 @@ int		count_p(char **map);
 int		count_e(char **map);
 int		invalid_map(t_game *game);
 int		valid_extention(char *file);
-void	flood_fill(char **map_c, int x, int y, t_game *game, int *cl, int *exit);
+void	flood_fill(char **map_c, int x, int y,
+			t_game *game, int *cl, int *exit);
 int		valid_chars2(char c);
 int		valid_path(t_game *game);
 char	*ft_itoa(int n);
