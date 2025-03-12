@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/12 10:41:18 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/12 11:11:49 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,11 @@ int	main(int ac, char **av)
 	game->win = mlx_new_window(game->mlx, game->x * 32, game->y * 32, "./so_long");
 	game->mvmt = 0;
 	game->clct = 0;
+	game->fr = 0;
 	apply_map(32, 32, game);
-	mlx_loop_hook(game->mlx, all_animations, game);
 	mlx_hook(game->win, 2, 0, move_player, game);
 	mlx_hook(game->win, KEY_EXIT, 0, press_x, game);
+	mlx_loop_hook(game->mlx, all_animations, game);
 	mlx_loop(game->mlx);
 	return (0);
 }
