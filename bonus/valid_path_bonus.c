@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 13:35:28 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/11 16:12:39 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/13 11:25:11 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,33 +35,33 @@ void	find_pl(t_game *game)
 	}
 }
 
-void	flood_fill(char **map_c, int x, int y, t_game *game, int *cl, int *exit)
+void	flood_fill(char **map_c, int x, int y, t_game *game)
 {
 	if (x < 0 || y < 0 || x >= game->width || y >= game->height)
 		return ;
 	if (map_c[y][x] == 'E')
-		*exit = 1;
+		game->ex_it = 1;
 	if (map_c[y][x] == 'C')
-		(*cl)--;
-	if (map_c[y][x] == '1' || map_c[y][x] == 'V' || map_c[y][x] == 'E')
+		game->clct--;
+	if (map_c[y][x] == '1' || map_c[y][x] == 'V' || map_c[y][x] == 'E'
+		|| map_c[y][x] == 'H')
 		return ;
 	map_c[y][x] = 'V';
-	flood_fill(map_c, x + 1, y, game, cl, exit);
-	flood_fill(map_c, x - 1, y, game, cl, exit);
-	flood_fill(map_c, x, y + 1, game, cl, exit);
-	flood_fill(map_c, x, y - 1, game, cl, exit);
+	flood_fill(map_c, x + 1, y, game);
+	flood_fill(map_c, x - 1, y, game);
+	flood_fill(map_c, x, y + 1, game);
+	flood_fill(map_c, x, y - 1, game);
 }
 
 int	valid_path(t_game *game)
 {
-	int		cl;
-	int		ext;
+	int		res;
 	int		i;
 	char	**map_c;
 
 	game->height = len_y(game->map);
 	game->width = len_x(game->map[0]);
-	cl = count_c(game->map);
+	game->clct = count_c(game->map);
 	find_pl(game);
 	map_c = malloc(sizeof(char *) * (game->height + 1));
 	if (!map_c)
@@ -73,7 +73,8 @@ int	valid_path(t_game *game)
 		i++;
 	}
 	map_c[i] = NULL;
-	flood_fill(map_c, game->px, game->py, game, &cl, &ext);
+	flood_fill(map_c, game->px, game->py, game);
+	res = (game->clct == 0 && game->ex_it == 1);
 	free_map(map_c);
-	return (cl == 0 && ext == 1);
+	return (res);
 }
