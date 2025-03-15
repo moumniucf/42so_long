@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/13 10:25:51 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/15 14:10:31 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,7 @@ void	find_player(t_game *game);
 void	get_error(void);
 void	line_map(t_game *game);
 void	inva_lid(t_game *game);
+void	get_error_chars(void);
+void	get_error_size(void);
+void	get_error_p(void);
 #endif

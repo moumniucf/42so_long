@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:37:43 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/12 10:50:18 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/15 14:01:28 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	inva_lid(t_game *game)
 {
 	if (!valid_path(game))
 	{
-		ft_printf("Error\n");
+		ft_printf("Error path\n");
 		exit(1);
 	}
 }

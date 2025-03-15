@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid_char.c                                       :+:      :+:    :+:   */
+/*   error_han.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 12:30:13 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/15 14:09:12 by youmoumn         ###   ########.fr       */
+/*   Created: 2025/03/15 12:24:02 by youmoumn          #+#    #+#             */
+/*   Updated: 2025/03/15 12:39:40 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	valid_chars2(char c)
+void	get_error_chars(void)
 {
-	int		i;
-	char	*s;
-
-	s = "01PEC";
-	i = 0;
-	while (i < 5)
-	{
-		if (s[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
+	ft_printf("Error: Invalid character found.\n");
+	exit(1);
 }
 
-void	free_map(char **map)
+void	get_error_p(void)
 {
-	int	i;
+	ft_printf("Error: Invalid number of players found.\n");
+	exit(1);
+}
 
-	if (!map)
-		return ;
-	i = 0;
-	while (map[i])
-	{
-		free(map[i]);
-		i++;
-	}
-	free(map);
+void	get_error_e(void)
+{
+	ft_printf("Error: Invalid number of exits found.\n");
+	exit(1);
+}
+
+void	get_error_size(void)
+{
+	ft_printf("Error: Row size mismatch.\n");
+	exit(1);
 }
