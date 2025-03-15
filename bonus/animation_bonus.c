@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 15:50:02 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/12 15:02:54 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/15 10:39:11 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	aplly_images(t_game *game)
 	game->img[1] = mlx_xpm_file_to_image(game->mlx, "fr2.xpm", &x, &y);
 	game->img[2] = mlx_xpm_file_to_image(game->mlx, "fr3.xpm", &x, &y);
 	game->img[3] = mlx_xpm_file_to_image(game->mlx, "fr4.xpm", &x, &y);
-	if (game->img[0] || game->img[1] || game->img[2] || game->img[3])
-		return ;
+	if (!game->img[0] || !game->img[1] || !game->img[2] || !game->img[3])
+		exit(1);
 }
 
 int	animation(t_game *game)
