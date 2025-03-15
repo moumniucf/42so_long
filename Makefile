@@ -2,7 +2,7 @@ NAME = so_long
 BNAME = so_long_bonus
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror
 MFLAG = -lmlx -framework OpenGL -framework AppKit
 
 SRCS = so_long.c valid_map.c getnextline/get_next_line.c getnextline/get_next_line_utils.c move.c \
@@ -46,5 +46,4 @@ fclean: clean
 	@rm -f $(NAME) $(BNAME)
 
 re: fclean all
-
-.PHONY : clean
+PHONY : clean

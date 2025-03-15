@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:05:54 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/12 15:08:54 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/15 11:44:04 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,13 @@ char	**reading_map(char *file)
 
 void	ima_ges(int i, int j, t_game *game)
 {
-	game->imag = mlx_xpm_file_to_image(game->mlx, "hayt.xpm", &i, &j);
-	game->imag1 = mlx_xpm_file_to_image(game->mlx, "e.xpm", &i, &j);
-	game->imag2 = mlx_xpm_file_to_image(game->mlx, "sb.xpm", &i, &j);
-	game->imag3 = mlx_xpm_file_to_image(game->mlx, "b.xpm", &i, &j);
-	game->imag4 = mlx_xpm_file_to_image(game->mlx, "police.xpm", &i, &j);
+	game->imag = mlx_xpm_file_to_image(game->mlx, "./textures/hayt.xpm",
+			&i, &j);
+	game->imag1 = mlx_xpm_file_to_image(game->mlx, "./textures/e.xpm", &i, &j);
+	game->imag2 = mlx_xpm_file_to_image(game->mlx, "./textures/sb.xpm", &i, &j);
+	game->imag3 = mlx_xpm_file_to_image(game->mlx, "./textures/b.xpm", &i, &j);
+	game->imag4 = mlx_xpm_file_to_image(game->mlx, "./textures/police.xpm",
+			&i, &j);
 	if (!game->imag || !game->imag1 || !game->imag2
 		|| !game->imag3 || !game->imag4)
 	{
