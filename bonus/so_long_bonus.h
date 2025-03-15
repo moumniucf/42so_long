@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/15 10:32:12 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/15 15:18:38 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,8 @@ void	free_map(char **map);
 int		get_heigth(char *line);
 void	invalid_m(t_game *game);
 int		count_h(char **map);
+void	get_error_chars(void);
+void	get_error_p(void);
+void	get_error_e(void);
+void	get_error_size(void);
 #endif

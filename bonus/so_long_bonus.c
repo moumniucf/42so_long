@@ -6,20 +6,11 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/15 11:49:03 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/15 15:30:29 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-
-void	inva_ex(char *file)
-{
-	if (!valid_extention(file))
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}
-}
 
 int	move_player(int keycode, t_game *game)
 {
@@ -36,6 +27,15 @@ int	move_player(int keycode, t_game *game)
 	return (0);
 }
 
+void	invlid_ex(char *file)
+{
+	if (!valid_extention(file))
+	{
+		ft_printf("Error exe\n");
+		exit(1);
+	}
+}
+
 int	main(int ac, char **av)
 {
 	t_game	*game ;
@@ -43,8 +43,8 @@ int	main(int ac, char **av)
 	game = malloc(sizeof(t_game));
 	if (ac != 2 || !game)
 		return (0);
+	invlid_ex(av[1]);
 	game->map = reading_map(av[1]);
-	inva_ex(av[1]);
 	so_parss_b(game->map, game);
 	invalid_m(game);
 	game->x = len_x(*game->map);

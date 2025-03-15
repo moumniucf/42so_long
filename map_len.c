@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 14:34:13 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/12 15:24:12 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/15 15:14:34 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	line_map(t_game *game)
 
 void	get_error(void)
 {
-	ft_printf("Error\n");
+	ft_printf("Error in map\n");
 	exit(1);
 }
 

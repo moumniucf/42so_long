@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:05:21 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/12 12:18:10 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/15 15:29:43 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	invalid2(char **map)
 
 void	get_error2(void)
 {
-	ft_printf("Error\n");
+	ft_printf("Error in map\n");
 	exit(1);
 }
 
