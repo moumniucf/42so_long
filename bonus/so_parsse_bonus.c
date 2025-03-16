@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:01:38 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/15 15:30:07 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/16 10:28:56 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,11 @@ void	invalid_map2(char **map)
 	}
 }
 
-void	so_parss_b(char **map, t_game *game)
+void	so_parss_b2(char **map, t_game *game)
 {
 	int	i;
 	int	j;
 
-	invalid_map2(map);
-	line_map(game);
 	i = 0;
 	while (i < game->width)
 	{
@@ -90,12 +88,34 @@ void	so_parss_b(char **map, t_game *game)
 				get_error_chars();
 			else if (count_e(map) != 1 || count_p(map) != 1 || !count_h(map))
 				get_error_e();
-			else if (len_x(map[0]) != len_x(map[i]))
+			j++;
+		}
+		i++;
+	}
+}
+
+void	so_parss_b(char **map, t_game *game)
+{
+	int	i;
+	int	j;
+
+	invalid_map2(map);
+	line_map(game);
+	so_parss_b2(map, game);
+	i = 0;
+	while (i < game->width)
+	{
+		j = 0;
+		while (j < game->height)
+		{
+			if (len_x(map[0]) != len_x(map[i]) || !invalid_map(game))
 				get_error_size();
-			else if (!invalid_map(game))
-				get_error2();
+			else if (count_p(map) != 1)
+				get_error_e();
 			else if (!valid_chars2(game->map[i][j]))
-				get_error2();
+				get_error_chars();
+			else
+				valid_win(game);
 			j++;
 		}
 		i++;

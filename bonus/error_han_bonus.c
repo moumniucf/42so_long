@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 15:17:29 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/15 15:18:43 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/16 10:26:58 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,9 @@ void	get_error_chars(void)
 	exit(1);
 }
 
-void	get_error_p(void)
-{
-	ft_printf("Error: Invalid number of players found.\n");
-	exit(1);
-}
-
 void	get_error_e(void)
 {
-	ft_printf("Error: Invalid number of exits found.\n");
+	ft_printf("Error: Invalid number of exits found or player.\n");
 	exit(1);
 }
 
@@ -34,4 +28,15 @@ void	get_error_size(void)
 {
 	ft_printf("Error: Row size mismatch.\n");
 	exit(1);
+}
+
+void	valid_win(t_game *game)
+{
+	game->height = len_x(*game->map);
+	game->width = len_y(game->map);
+	if (game->width * 32 > 5120 || game->height * 32 > 2880)
+	{
+		ft_printf("Error: Map is too big for the screen!\n");
+		exit(1);
+	}
 }
