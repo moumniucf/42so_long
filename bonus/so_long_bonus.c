@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/17 10:50:51 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/17 13:35:13 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ void	invlid_ex(char *file)
 	}
 }
 
+void	help_norm(t_game *game)
+{
+	so_parss_b(game->map, game);
+	invalid_m(game);
+}
+
 int	main(int ac, char **av)
 {
 	t_game	*game ;
@@ -45,13 +51,16 @@ int	main(int ac, char **av)
 	if (ac != 2 || !game)
 		return (0);
 	game->map = reading_map(av[1]);
-	so_parss_b(game->map, game);
-	invalid_m(game);
+	help_norm(game);
 	game->x = len_x(*game->map);
 	game->y = len_y(game->map);
 	game->mlx = mlx_init();
+	if (!game->mlx)
+		exit(1);
 	game->win = mlx_new_window(game->mlx, game->x * 32,
 			game->y * 32, "./so_long");
+	if (!game->win)
+		exit(1);
 	game->mvmt = 0;
 	game->clct = 0;
 	game->fr = 0;

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/17 10:54:45 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/17 13:19:11 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,39 @@ int	move_player(int keycode, t_game *game)
 	return (0);
 }
 
-int	main(int ac, char **av)
+void	invalid_exi(char *file)
 {
-	t_game	*game ;
-
-	if (!valid_extention(av[1]))
+	if (!valid_extention(file))
 	{
 		ft_printf("Error exe\n");
 		exit(1);
 	}
+}
+
+int	main(int ac, char **av)
+{
+	t_game	*game ;
+
+	invalid_exi(av[1]);
 	game = malloc(sizeof(t_game));
 	if (ac != 2 || !game)
-		return (0);
+		exit(1);
 	game->map = reading_map(av[1]);
 	so_parss(game->map, game);
 	inva_lid(game);
 	game->x = len_x(*game->map);
 	game->y = len_y(game->map);
 	game->mlx = mlx_init();
+	if (!game->mlx)
+		exit(1);
 	game->win = mlx_new_window(game->mlx, game->x * 32,
 			game->y * 32, "./so_long");
+	if (!game->win)
+		exit(1);
 	game->mvmt = 1;
 	game->clct = 0;
 	apply_map(32, 32, game);
 	mlx_hook(game->win, 2, 0, move_player, game);
 	mlx_hook(game->win, KEY_EXIT, 0, press_x, game);
 	mlx_loop(game->mlx);
-	return (0);
 }
