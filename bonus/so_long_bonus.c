@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/15 15:30:29 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/17 10:50:51 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ int	main(int ac, char **av)
 {
 	t_game	*game ;
 
+	invlid_ex(av[1]);
 	game = malloc(sizeof(t_game));
 	if (ac != 2 || !game)
 		return (0);
-	invlid_ex(av[1]);
 	game->map = reading_map(av[1]);
 	so_parss_b(game->map, game);
 	invalid_m(game);

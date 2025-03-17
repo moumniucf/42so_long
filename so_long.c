@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/14 14:49:42 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/17 10:54:45 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,17 @@ int	main(int ac, char **av)
 {
 	t_game	*game ;
 
+	if (!valid_extention(av[1]))
+	{
+		ft_printf("Error exe\n");
+		exit(1);
+	}
 	game = malloc(sizeof(t_game));
 	if (ac != 2 || !game)
 		return (0);
 	game->map = reading_map(av[1]);
 	so_parss(game->map, game);
 	inva_lid(game);
-	if (!valid_extention(av[1]))
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}
 	game->x = len_x(*game->map);
 	game->y = len_y(game->map);
 	game->mlx = mlx_init();
