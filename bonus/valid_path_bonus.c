@@ -43,7 +43,8 @@ void	flood_fill(char **map_c, int x, int y, t_game *game)
 		game->ex_it = 1;
 	if (map_c[y][x] == 'C')
 		game->clct--;
-	if (map_c[y][x] == '1' || map_c[y][x] == 'V' || map_c[y][x] == 'E')
+	if (map_c[y][x] == '1' || map_c[y][x] == 'V' || map_c[y][x] == 'E'
+		|| map_c[y][x] == 'H')
 		return ;
 	map_c[y][x] = 'V';
 	flood_fill(map_c, x + 1, y, game);
