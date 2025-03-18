@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/16 10:28:03 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/18 13:41:43 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_game
 	int		y;
 	int		px;
 	int		py;
+	int		enmx;
+	int		enmy;
 	void	*win;
 	void	*mlx;
 	char	**map;
