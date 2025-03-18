@@ -40,9 +40,11 @@ int	main(int ac, char **av)
 {
 	t_game	*game ;
 
+	if (ac != 2)
+		exit(1);
 	invalid_exi(av[1]);
 	game = malloc(sizeof(t_game));
-	if (ac != 2 || !game)
+	if (!game)
 		exit(1);
 	game->map = reading_map(av[1]);
 	so_parss(game->map, game);

@@ -46,10 +46,12 @@ int	main(int ac, char **av)
 {
 	t_game	*game ;
 
+	if (ac != 2)
+		return (0);
 	invlid_ex(av[1]);
 	game = malloc(sizeof(t_game));
-	if (ac != 2 || !game)
-		return (0);
+	if (!game)
+		exit(1);
 	game->map = reading_map(av[1]);
 	help_norm(game);
 	game->x = len_x(*game->map);

@@ -2,7 +2,7 @@ NAME = so_long
 BNAME = so_long_bonus
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address 
+CFLAGS = -Wall -Wextra -Werror
 MFLAG = -lmlx -framework OpenGL -framework AppKit
 
 SRCS = so_long.c valid_map.c getnextline/get_next_line.c getnextline/get_next_line_utils.c move.c \
@@ -17,7 +17,7 @@ bonus/printf/ft_putpoint.c bonus/printf/ft_putprc.c bonus/printf/ft_putstr.c bon
 bonus/valid_chars2_bonus.c bonus/ft_itoa_bonus.c bonus/animation_bonus.c bonus/valid_path_bonus.c bonus/parsse2_bonus.c bonus/error_han_bonus.c\
 
 HEADER = so_long.h
-BHEADER = so_long_bonus.h
+BHEADER = bonus/so_long_bonus.h
 
 OBSRCS = $(SRCS:%.c=%.o)
 BOB_SRCS = $(BSRCS:%.c=%.o)
