@@ -67,7 +67,6 @@ int	main(int ac, char **av)
 	apply_map(32, 32, game);
 	mlx_hook(game->win, 2, 0, move_player, game);
 	mlx_hook(game->win, KEY_EXIT, 0, press_x, game);
-	// mlx_loop_hook(game->mlx, all_animations, game);
-	mlx_loop_hook(game->mlx, move_enemy, game);
+	mlx_loop_hook(game->mlx, all_animations, game);
 	mlx_loop(game->mlx);
 }

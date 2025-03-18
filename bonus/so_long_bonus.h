@@ -98,5 +98,4 @@ void	get_error_chars(void);
 void	get_error_e(void);
 void	get_error_size(void);
 void	valid_win(t_game *game);
-int	move_enemy(t_game *game);
 #endif
