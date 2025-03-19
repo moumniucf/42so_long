@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/18 13:41:43 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/19 11:52:00 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <mlx.h>
 # include "printf/ft_printf.h"
-# include "getnextline/get_next_line.h"
+# include "getnextline/get_next_line.h"  
 
 typedef struct s_game
 {
@@ -65,11 +65,6 @@ int		len_x(char *map);
 int		prees_esc(int keycode, t_game *game);
 void	move_p(t_game *game, int x, int y);
 int		press_x(t_game *game);
-int		move_rig(int keycode, t_game *game);
-int		move_lef(int keycode, t_game *game);
-int		move_player(int keycode, t_game *game);
-int		move_up(int keycode, t_game *game);
-int		move_dow(int keycode, t_game *game);
 int		count_c(char **map);
 void	so_parss_b(char **map, t_game *game);
 int		count_p(char **map);
