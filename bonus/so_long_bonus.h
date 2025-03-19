@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/19 11:52:00 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/19 16:18:27 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ typedef struct s_game
 	void	*imag3;
 	void	*imag4;
 	char	*img[4];
+	int		enemy_count;
+	char enemy_dir[100];
+	char enemies[100][2];
 }		t_game;
 
 # define KEY_ESC 53
@@ -93,4 +96,5 @@ void	get_error_chars(void);
 void	get_error_e(void);
 void	get_error_size(void);
 void	valid_win(t_game *game);
+int move_ene_my(t_game *game);
 #endif

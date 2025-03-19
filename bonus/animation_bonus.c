@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 15:50:02 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/15 11:43:32 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/19 16:18:41 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	all_animations(t_game *game)
 	int	j;
 
 	animation(game);
+	move_ene_my(game);
 	i = 0;
 	while (game->map[i])
 	{
