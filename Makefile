@@ -76,12 +76,12 @@ PHONY : clean
 
 # all: $(NAME)
 
-# %.o: %.c 
-# 	@$(CC) -c $< $(CFLAGS) -o $@
-# 	@echo "Compiling" $< "to" $@
+# # %.o: %.c 
+# # 	@$(CC) -c $< $(CFLAGS) -o $@
+# # 	@echo "Compiling" $< "to" $@
 
 # $(NAME): $(OBSRCS) $(SRCS) $(HEADER)
-# 	@$(CC) $(CFLAGS) $(MFLAG) $(OBSRCS) -o $(NAME)
+# 	$(CC) $(CFLAGS) $(MFLAG) $(OBSRCS) -o $(NAME)
 
 # bonus: $(BSRCS) $(BHEADER) $(BOB_SRCS)
 # 	$(CC) $(CFLAGS) $(MFLAG) $(BOB_SRCS) -o $(BNAME)

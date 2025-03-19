@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/17 13:19:11 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/19 11:56:49 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,17 @@ void	invalid_exi(char *file)
 	}
 }
 
+void	error_ac(int ac)
+{
+	if (ac != 2)
+		exit(1);
+}
+
 int	main(int ac, char **av)
 {
 	t_game	*game ;
 
-	if (ac != 2)
-		exit(1);
+	error_ac(ac);
 	invalid_exi(av[1]);
 	game = malloc(sizeof(t_game));
 	if (!game)

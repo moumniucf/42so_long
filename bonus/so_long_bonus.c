@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/19 11:51:56 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/19 11:58:46 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,17 @@ void	help_norm(t_game *game)
 	invalid_m(game);
 }
 
+void	error_ac(int ac)
+{
+	if (ac != 2)
+		exit(1);
+}
+
 int	main(int ac, char **av)
 {
 	t_game	*game ;
 
-	if (ac != 2)
-		return (0);
+	error_ac(ac);
 	invlid_ex(av[1]);
 	game = malloc(sizeof(t_game));
 	if (!game)
@@ -64,7 +69,6 @@ int	main(int ac, char **av)
 	if (!game->win)
 		exit(1);
 	game->mvmt = 0;
-	game->clct = 0;
 	game->fr = 0;
 	apply_map(32, 32, game);
 	mlx_hook(game->win, 2, 0, move_player, game);
