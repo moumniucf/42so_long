@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 14:58:15 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/19 16:45:11 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/19 16:46:15 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,6 @@ int move_ene_my(t_game *game)
     animation(game);
     return (0);
 }
+
+
+
