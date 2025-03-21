@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 17:11:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/15 11:41:55 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/20 13:56:29 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	get_heigth(char *line)
 		free(line);
 		line = get_next_line(fd);
 	}
+	close (fd);
 	return (len);
 }
 
