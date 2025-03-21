@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/19 11:56:49 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/21 16:19:05 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,20 @@ void	error_ac(int ac)
 	if (ac != 2)
 		exit(1);
 }
-
+void	leaks()
+{
+	system("leaks so_long");
+}
 int	main(int ac, char **av)
 {
+	atexit(leaks);
 	t_game	*game ;
 
 	error_ac(ac);
 	invalid_exi(av[1]);
 	game = malloc(sizeof(t_game));
 	if (!game)
-		exit(1);
+		return (1);
 	game->map = reading_map(av[1]);
 	so_parss(game->map, game);
 	inva_lid(game);
@@ -58,11 +62,20 @@ int	main(int ac, char **av)
 	game->y = len_y(game->map);
 	game->mlx = mlx_init();
 	if (!game->mlx)
-		exit(1);
+	{
+		free_map(game->map);
+		free(game);
+		return(1);
+	}
 	game->win = mlx_new_window(game->mlx, game->x * 32,
 			game->y * 32, "./so_long");
+	// game->win = NULL;
 	if (!game->win)
-		exit(1);
+	{
+		free_map(game->map);
+		free(game);
+		return (1);
+	}
 	game->mvmt = 1;
 	game->clct = 0;
 	apply_map(32, 32, game);
