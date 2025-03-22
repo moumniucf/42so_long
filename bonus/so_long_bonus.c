@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tahadev <tahadev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/22 14:48:08 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/22 18:34:17 by tahadev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,9 @@ int	main(int ac, char **av)
 	game->mlx = mlx_init();
 	if (!game->mlx)
 		exit(1);
-	game->win = mlx_new_window(game->mlx, game->x * 32,
-			game->y * 32, "./so_long");
+	//game->win = mlx_new_window(game->mlx, game->x * 32,
+			//game->y * 32, "./so_long");
+	game->win = NULL;
 	if (!game->win)
 		exit(1);
 	game->mvmt = 0;

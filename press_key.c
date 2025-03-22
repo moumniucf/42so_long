@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   press_key.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tahadev <tahadev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 11:29:00 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/10 16:34:48 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/22 21:50:06 by tahadev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	prees_esc(int keycode, t_game *game)
 int	press_x(t_game *game)
 {
 	mlx_destroy_window(game->mlx, game->win);
+	free(game);
 	exit(0);
 	return (0);
 }

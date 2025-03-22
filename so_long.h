@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tahadev <tahadev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/22 15:17:24 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/22 22:18:40 by tahadev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ typedef struct s_game
 	void	*img4;
 }	t_game;
 
-# define KEY_ESC 53 
-# define KEY_LEF 123
-# define KEY_RIG 124
-# define KEY_UP 126
-# define KEY_DOW 125
+# define KEY_ESC 9
+# define KEY_LEF 113
+# define KEY_RIG 114
+# define KEY_UP 111
+# define KEY_DOW 116
 # define KEY_W 13
 # define KEY_A 0
 # define KEY_S 1
