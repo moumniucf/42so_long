@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/21 16:19:05 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/22 10:50:51 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ int	main(int ac, char **av)
 	}
 	game->win = mlx_new_window(game->mlx, game->x * 32,
 			game->y * 32, "./so_long");
-	// game->win = NULL;
 	if (!game->win)
 	{
 		free_map(game->map);

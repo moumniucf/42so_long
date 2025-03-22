@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/21 15:12:49 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/22 12:51:52 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@ typedef struct s_game
 	int		width;
 	int		x;
 	int		y;
+	int		game_over;
 	int		px;
 	int		py;
-	int		enmx;
-	int		enmy;
 	int		dir;
 	void	*win;
 	void	*mlx;
@@ -93,4 +92,5 @@ void	get_error_chars(void);
 void	get_error_e(void);
 void	get_error_size(void);
 void	valid_win(t_game *game);
+int		move_enemy(t_game *game);
 #endif

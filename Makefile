@@ -2,7 +2,7 @@ NAME = so_long
 BNAME = so_long_bonus
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
 MFLAG = -lmlx -framework OpenGL -framework AppKit
 
 SRCS = so_long.c valid_map.c getnextline/get_next_line.c getnextline/get_next_line_utils.c move.c \
@@ -15,7 +15,7 @@ bonus/valid_map_bonus.c bonus/getnextline/get_next_line.c bonus/getnextline/get_
 bonus/press_key_bonus.c bonus/printf/ft_printf.c bonus/printf/ft_putchar.c bonus/printf/ft_puthex.c bonus/printf/ft_putnbr.c\
 bonus/printf/ft_putpoint.c bonus/printf/ft_putprc.c bonus/printf/ft_putstr.c bonus/printf/ft_putunsigned.c bonus/so_parsse_bonus.c\
 bonus/valid_chars2_bonus.c bonus/ft_itoa_bonus.c bonus/animation_bonus.c bonus/valid_path_bonus.c bonus/parsse2_bonus.c bonus/error_han_bonus.c\
-
+bonus/enemy_patrol_bonus.c
 HEADER = so_long.h
 BHEADER = bonus/so_long_bonus.h
 
