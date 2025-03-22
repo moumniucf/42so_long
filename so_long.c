@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/22 16:04:27 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/22 16:41:30 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,15 @@ int	main(int ac, char **av)
 	game->win = NULL;
 	if (!game->win)
 	{
-		// mlx_destroy_window(game->mlx, game->win);
+		// ft_printf("Error in win\n");
 		free_map(game->map);
+		free(game->mlx);
 		free(game);
-		exit (1);
+		// exit (1);
+		return (1);
 
 	}
+	mlx_clear_window(game->mlx, game->win);
 	game->mvmt = 1;
 	game->clct = 0;
 	apply_map(32, 32, game);
