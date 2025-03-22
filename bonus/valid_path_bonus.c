@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 13:35:28 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/19 12:02:37 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/22 14:56:23 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ void	flood_fill(char **map_c, int x, int y, t_game *game)
 		game->ex_it = 1;
 	if (map_c[y][x] == 'C')
 		game->clct--;
-	if (map_c[y][x] == '1' || map_c[y][x] == 'V' || map_c[y][x] == 'E'
-		|| map_c[y][x] == 'H')
+	if (map_c[y][x] == '1' || map_c[y][x] == 'V' || map_c[y][x] == 'E')
 		return ;
 	map_c[y][x] = 'V';
 	flood_fill(map_c, x + 1, y, game);

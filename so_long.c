@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/22 10:50:51 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/22 15:32:16 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,12 @@ void	error_ac(int ac)
 	if (ac != 2)
 		exit(1);
 }
-void	leaks()
-{
+void	leask(){
 	system("leaks so_long");
 }
 int	main(int ac, char **av)
 {
-	atexit(leaks);
+	atexit(leask);
 	t_game	*game ;
 
 	error_ac(ac);
@@ -64,16 +63,16 @@ int	main(int ac, char **av)
 	if (!game->mlx)
 	{
 		free_map(game->map);
-		free(game);
-		return(1);
+		free(game->mlx);
+		exit (1);
 	}
 	game->win = mlx_new_window(game->mlx, game->x * 32,
 			game->y * 32, "./so_long");
 	if (!game->win)
 	{
 		free_map(game->map);
-		free(game);
-		return (1);
+		free(game->win);
+		exit (1);
 	}
 	game->mvmt = 1;
 	game->clct = 0;

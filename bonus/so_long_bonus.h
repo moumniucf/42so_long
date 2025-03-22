@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/22 12:51:52 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/22 15:18:00 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_game
 	int		width;
 	int		x;
 	int		y;
-	int		game_over;
 	int		px;
 	int		py;
 	int		dir;
