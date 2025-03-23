@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 14:42:45 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/15 15:19:33 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/23 14:35:24 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	invalid_m(t_game *game)
 	if (!valid_path(game))
 	{
 		ft_printf("Error in path\n");
+		free_map(game->map);
+		free(game);
 		exit(1);
 	}
 }
