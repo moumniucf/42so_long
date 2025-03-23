@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 10:51:22 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/22 14:55:18 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/23 10:43:22 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	move_enemy(t_game *game)
 	static int	d = 1;
 	static int	m = 0;
 	int			nj;
+	char *n;
 
 	mlx_clear_window(game->mlx, game->win);
 	if (m % 10 == 0)
@@ -60,7 +61,9 @@ int	move_enemy(t_game *game)
 	}
 	apply_map(32, 32, game);
 	m++;
+	n = ft_itoa(game->mvmt);
 	mlx_string_put(game->mlx, game->win, 0, 10, WH, "Moves:");
-	mlx_string_put(game->mlx, game->win, 70, 10, WH, ft_itoa(game->mvmt));
+	mlx_string_put(game->mlx, game->win, 70, 10, WH, n);
+	free(n);
 	return (0);
 }

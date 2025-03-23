@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tahadev <tahadev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/22 18:34:17 by tahadev          ###   ########.fr       */
+/*   Updated: 2025/03/23 10:46:12 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,12 @@ void	error_ac(int ac)
 	if (ac != 2)
 		exit(1);
 }
-
+void leaks(){
+	system("leaks so_long_bonus");
+}
 int	main(int ac, char **av)
 {
+	atexit(leaks);
 	t_game	*game ;
 
 	error_ac(ac);
@@ -61,14 +64,26 @@ int	main(int ac, char **av)
 	help_norm(game);
 	game->x = len_x(*game->map);
 	game->y = len_y(game->map);
+	// game->mlx = NULL;
 	game->mlx = mlx_init();
 	if (!game->mlx)
-		exit(1);
-	//game->win = mlx_new_window(game->mlx, game->x * 32,
-			//game->y * 32, "./so_long");
+	{
+		free_map(game->map);
+		free(game);
+		// exit(1);
+		return (1);
+	}
+	// game->win = mlx_new_window(game->mlx, game->x * 32,
+	// 		game->y * 32, "./so_long");
 	game->win = NULL;
 	if (!game->win)
-		exit(1);
+	{
+		free_map(game->map);
+		free(game);
+		free(game->mlx);
+		// exit(1);
+		return (1);
+	}
 	game->mvmt = 0;
 	game->fr = 0;
 	apply_map(32, 32, game);
