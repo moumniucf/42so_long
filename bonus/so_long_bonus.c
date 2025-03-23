@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 12:00:56 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/23 10:46:12 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/23 11:42:48 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,10 @@ void	error_ac(int ac)
 	if (ac != 2)
 		exit(1);
 }
-void leaks(){
-	system("leaks so_long_bonus");
-}
+
 int	main(int ac, char **av)
 {
-	atexit(leaks);
-	t_game	*game ;
+	t_game	*game;
 
 	error_ac(ac);
 	invlid_ex(av[1]);
@@ -64,26 +61,13 @@ int	main(int ac, char **av)
 	help_norm(game);
 	game->x = len_x(*game->map);
 	game->y = len_y(game->map);
-	// game->mlx = NULL;
 	game->mlx = mlx_init();
 	if (!game->mlx)
-	{
-		free_map(game->map);
-		free(game);
-		// exit(1);
-		return (1);
-	}
-	// game->win = mlx_new_window(game->mlx, game->x * 32,
-	// 		game->y * 32, "./so_long");
-	game->win = NULL;
+		help_fr(game);
+	game->win = mlx_new_window(game->mlx, game->x * 32,
+			game->y * 32, "./so_long_bonus");
 	if (!game->win)
-	{
-		free_map(game->map);
-		free(game);
-		free(game->mlx);
-		// exit(1);
-		return (1);
-	}
+		help_fr(game);
 	game->mvmt = 0;
 	game->fr = 0;
 	apply_map(32, 32, game);

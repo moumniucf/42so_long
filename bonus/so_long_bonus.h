@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/23 10:26:12 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/23 11:42:38 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ typedef struct s_game
 	void	*win;
 	void	*mlx;
 	char	**map;
+	char	*n;
 	int		fr;
 	int		mvmt;
+	int		enmx;
+	int		enmy;
 	int		clct;
 	int		ex_it;
 	void	*imag;
@@ -92,4 +95,5 @@ void	get_error_e(void);
 void	get_error_size(void);
 void	valid_win(t_game *game);
 int		move_enemy(t_game *game);
+void	help_fr(t_game *game);
 #endif

@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:59:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/22 14:04:21 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/23 11:43:11 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,11 @@ void	move_p(t_game *game, int x, int y)
 {
 	find_pl(game);
 	help_mov(game, x, y);
+}
+
+void	help_fr(t_game *game)
+{
+	free_map(game->map);
+	free(game);
+	exit(1);
 }

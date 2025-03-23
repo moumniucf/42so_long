@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:04 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/23 10:50:26 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/23 12:01:56 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,15 @@ void	error_ac(int ac)
 	if (ac != 2)
 		exit(1);
 }
-void		leaks(){
+
+int	help_fr(t_game *game)
+{
+	free_map(game->map);
+	free(game->mlx);
+	free(game);
+	exit(1);
+}
+void	leaks(){
 	system("leaks so_long");
 }
 int	main(int ac, char **av)
@@ -61,25 +69,16 @@ int	main(int ac, char **av)
 	game->y = len_y(game->map);
 	game->mlx = mlx_init();
 	if (!game->mlx)
-	{
-		free_map(game->map);
-		free(game);
-		exit (1);
-	}
+		help_fr(game);
+	// game->win = mlx_new_window(game->mlx, game->x * 32,
+			// game->y * 32, "./so_long");
 	game->win = NULL;
 	if (!game->win)
-	{
-		free_map(game->map);
-		free(game);
-		free(game->win);
-		free(game->mlx);;
-		return (1);
-	}
+		help_fr(game);
 	game->mvmt = 1;
 	game->clct = 0;
 	apply_map(32, 32, game);
 	mlx_hook(game->win, 2, 0, move_player, game);
 	mlx_hook(game->win, KEY_EXIT, 0, press_x, game);
 	mlx_loop(game->mlx);
-	mlx_destroy_window(game->mlx, game->win);
 }
