@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 11:56:37 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/24 10:49:20 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/24 11:27:37 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <mlx.h>
-# include "printf/ft_printf.h"
+# include "printf/ft_printf_bonus.h"
 # include "getnextline/get_next_line_bonus.h"
 
 typedef struct s_game

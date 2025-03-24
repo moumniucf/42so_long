@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_puthex_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 11:46:52 by youmoumn          #+#    #+#             */
-/*   Updated: 2024/11/27 16:57:57 by youmoumn         ###   ########.fr       */
+/*   Created: 2025/03/24 11:25:49 by youmoumn          #+#    #+#             */
+/*   Updated: 2025/03/24 11:25:53 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
-int	ft_putnbr(int n)
+int	ft_puthex(unsigned int n, char c)
 {
-	int		x;
-	long	y;
+	int		i;
+	char	*uper;
+	char	*lower;
 
-	x = 0;
-	y = (long)n;
-	if (y < 0)
-	{
-		x += ft_putchar('-');
-		y *= -1;
-	}
-	if (y > 9)
-	{
-		x += ft_putnbr(y / 10);
-		x += ft_putnbr(y % 10);
-	}
+	i = 0;
+	lower = "0123456789abcdef";
+	uper = "0123456789ABCDEF";
+	if (n < 16 && c == 'x')
+		i += ft_putchar(lower[n]);
+	else if (n < 16 && c == 'X')
+		i += ft_putchar(uper[n]);
 	else
 	{
-		x += ft_putchar(y + 48);
+		i += ft_puthex(n / 16, c);
+		i += ft_puthex(n % 16, c);
 	}
-	return (x);
+	return (i);
 }

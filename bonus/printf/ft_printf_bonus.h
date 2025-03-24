@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putpoint.c                                      :+:      :+:    :+:   */
+/*   ft_printf_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 16:11:06 by youmoumn          #+#    #+#             */
-/*   Updated: 2024/12/02 10:12:57 by youmoumn         ###   ########.fr       */
+/*   Created: 2025/03/24 11:25:21 by youmoumn          #+#    #+#             */
+/*   Updated: 2025/03/24 11:25:25 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_BONUS_H
+# define FT_PRINTF_BONUS_H
+# include <unistd.h>
+# include <stdarg.h>
 
-int	ft_putpoint(unsigned long n)
-{
-	int		x;
-	char	*s;
+int	ft_printf(const char *rst, ...);
+int	ft_putchar(char c);
+int	ft_puthex(unsigned int n, char c);
+int	ft_putstr(char *s);
+int	ft_putnbr(int n);
+int	ft_putunsigned(unsigned int n);
+int	ft_putpoint(unsigned long n);
+int	ft_putprc(char s);
 
-	x = 0;
-	s = "0123456789abcdef";
-	if (n >= 16)
-	{
-		x += ft_putpoint(n / 16);
-		x += ft_putpoint(n % 16);
-	}
-	else
-	{
-		x += ft_putchar(s[n]);
-	}
-	return (x);
-}
+#endif

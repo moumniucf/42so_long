@@ -6,7 +6,7 @@
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 11:14:23 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/03/24 10:36:54 by youmoumn         ###   ########.fr       */
+/*   Updated: 2025/03/24 11:27:55 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,4 @@ void	get_error_size(void);
 void	get_error_p(void);
 void	get_error_chars(void);
 void	valid_win(t_game *game);
-
-
 #endif

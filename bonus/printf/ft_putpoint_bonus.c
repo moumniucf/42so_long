@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
+/*   ft_putpoint_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 14:30:16 by youmoumn          #+#    #+#             */
-/*   Updated: 2024/11/28 14:56:56 by youmoumn         ###   ########.fr       */
+/*   Created: 2025/03/24 11:26:10 by youmoumn          #+#    #+#             */
+/*   Updated: 2025/03/24 11:26:15 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
-int	ft_putunsigned(unsigned int n)
+int	ft_putpoint(unsigned long n)
 {
-	unsigned int	x;
+	int		x;
+	char	*s;
 
 	x = 0;
-	if (n > 9)
+	s = "0123456789abcdef";
+	if (n >= 16)
 	{
-		x += ft_putunsigned(n / 10);
-		x += ft_putunsigned(n % 10);
+		x += ft_putpoint(n / 16);
+		x += ft_putpoint(n % 16);
 	}
 	else
 	{
-		x += ft_putchar(n + 48);
+		x += ft_putchar(s[n]);
 	}
 	return (x);
 }

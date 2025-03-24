@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/23 15:10:54 by youmoumn          #+#    #+#             */
-/*   Updated: 2024/12/02 10:12:02 by youmoumn         ###   ########.fr       */
+/*   Created: 2025/03/24 11:25:01 by youmoumn          #+#    #+#             */
+/*   Updated: 2025/03/24 11:30:12 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 int	ft_printother(va_list lst, const char c)
 {
