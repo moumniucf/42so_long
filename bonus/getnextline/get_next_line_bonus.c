@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youmoumn <youmoumn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/03 15:44:41 by youmoumn          #+#    #+#             */
-/*   Updated: 2025/02/15 10:28:18 by youmoumn         ###   ########.fr       */
+/*   Created: 2025/03/24 10:46:36 by youmoumn          #+#    #+#             */
+/*   Updated: 2025/03/24 10:46:42 by youmoumn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	haveline(char *s)
 {
